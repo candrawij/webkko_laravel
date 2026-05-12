@@ -24,12 +24,12 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="index.php">Beranda</a></li>
-                    <li class="nav-item"><a class="nav-link" href="anggota.php">Anggota</a></li>
-                    <li class="nav-item"><a class="nav-link" href="kegiatan.php">Kegiatan</a></li>
-                    <li class="nav-item"><a class="nav-link" href="galeri.php">Galeri</a></li>
-                    <li class="nav-item"><a class="nav-link" href="legalitas.php">Legalitas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="kontak.php">Kontak</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/index">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/anggota">Anggota</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/kegiatan">Kegiatan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/galeri">Galeri</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/legalitas">Legalitas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/kontak">Kontak</a></li>
                     <li class="nav-item"><a class="nav-link" href="login.php" target="_blank">Login</a></li>
                 </ul>
             </div>
