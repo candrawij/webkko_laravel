@@ -1,0 +1,112 @@
+body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Background lembut */
+        #hero {
+            position: relative;
+            height: 100vh;
+            /* full tinggi layar */
+            margin: 0;
+            padding: 0;
+            /* hapus padding */
+        }
+
+        .tagline {
+            display: inline-block;
+            background: #fde0df;
+            color: #c94c4c;
+            font-size: 14px;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 0.2rem;
+        }
+
+        .hero-subtitle {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #f44336;
+        }
+
+        .hero-desc {
+            max-width: 600px;
+            margin: 20px auto;
+            font-size: 1.1rem;
+            color: #444;
+        }
+
+        .btn-join {
+            background-color: #f44336;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+
+        .btn-program {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 500;
+            margin-left: 10px;
+        }
+
+        .navbar .nav-link.active {
+            color: #f44336 !important;
+            font-weight: bold;
+        }
+
+        .text-shadow {
+            text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9);
+        }
+
+        #hero {
+            height: 90vh;
+        }
+
+        .sambutan-wrapper {
+            max-height: 390px;
+            /* Sesuaikan dengan tinggi foto agar sama panjang */
+            overflow-y: hidden;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .sambutan-wrapper.scrollable {
+            overflow-y: auto;
+        }
+
+        .sambutan-wrapper::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            background: linear-gradient(to bottom, transparent, white);
+            pointer-events: none;
+            display: block;
+        }
+
+        .sambutan-wrapper.scrollable::after {
+            display: none;
+        }
+
+        .icon-circle {
+            background: #dc3545;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
