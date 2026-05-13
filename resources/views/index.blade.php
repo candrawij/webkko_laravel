@@ -24,7 +24,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="/index">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/">Beranda</a></li>
                     <li class="nav-item"><a class="nav-link" href="/anggota">Anggota</a></li>
                     <li class="nav-item"><a class="nav-link" href="/kegiatan">Kegiatan</a></li>
                     <li class="nav-item"><a class="nav-link" href="/galeri">Galeri</a></li>
