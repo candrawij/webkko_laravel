@@ -307,7 +307,7 @@
             height: 200px;
             object-fit: cover;
         }
-    </styl>
+    </style>
 
     <div class="container">
         <div class="text-center mb-5">
