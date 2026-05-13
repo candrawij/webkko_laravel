@@ -72,7 +72,7 @@
             <div class="card h-100 shadow-sm">
             <img src="../assets/img/pengurus1.jpg" class="card-img-top" alt="Pengurus 1">
             <div class="card-body text-center">
-                <h5 class="card-title
+                <h5 class="card-title">
 
     </div>
   </div>

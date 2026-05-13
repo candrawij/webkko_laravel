@@ -52,7 +52,10 @@
         <div class="col-md-6 col-lg-4">
             <div class="card h-100 shadow-sm">
             <div class="card-body d-flex flex-column">
-                <h5 class="card-title
+                <h5 class="card-title">
+            </div>
+            </div>
+        </div>
     </div>
   </div>
 
