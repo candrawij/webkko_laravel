@@ -2,7 +2,7 @@
     <div class="container">
 
         <a class="navbar-brand fw-bold text-danger d-flex align-items-center gap-2" href="/">
-            <img src="/assets/img/logo.jpg" alt="Logo" width="40" height="40" class="me-2 rounded-circle">
+            <img src="/assets/img/logo.jpg" alt="Logo" width="35" height="35" class="me-2 rounded-circle">
             <span class="d-none d-sm-block">KKO PAUD Kota Semarang</span>
         </a>
 
@@ -13,10 +13,11 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
-            <div class="navbar-nav ms-auto align-items-center gap-2 gap-lg-1 fw-medium">
+            <div class="navbar-nav ms-auto align-items-center gap-2 gap-lg-1 fw-normal">
                 <x-nav-link href="/" :active="request()->is('/')">Beranda</x-nav-link>
                 <x-nav-link href="/anggota" :active="request()->is('anggota')">Anggota</x-nav-link>
                 <x-nav-link href="/kegiatan" :active="request()->is('kegiatan')">Kegiatan</x-nav-link>
+                <x-nav-link href="/berita" :active="request()->is('berita')">Berita</x-nav-link>
                 <x-nav-link href="/galeri" :active="request()->is('galeri')">Galeri</x-nav-link>
                 <x-nav-link href="/legalitas" :active="request()->is('legalitas')">Legalitas</x-nav-link>
                 <x-nav-link href="/kontak" :active="request()->is('kontak')">Kontak</x-nav-link>

@@ -14,6 +14,10 @@ Route::get('/kegiatan', function () {
     return view('kegiatan');
 });
 
+Route::get('/berita', function () {
+    return view('berita');
+});
+
 Route::get('/galeri', function () {
     return view('galeri');
 });
