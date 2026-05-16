@@ -1,0 +1,248 @@
+[
+{"type":"header","version":"5.2.1","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"kkosemarang_web"},
+{"type":"table","name":"activity_logs","database":"kkosemarang_web","data":
+[
+{"id":"1","user_id":"0","username":"Guest","action":"DATA_SEARCH","details":"Searched anggota by: faidza92@gmail.com","ip_address":"::1","created_at":"2026-04-22 12:41:33"},
+{"id":"2","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827172315.jpg","ip_address":"::1","created_at":"2026-04-22 12:41:44"},
+{"id":"3","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827144459.jpg","ip_address":"::1","created_at":"2026-04-22 12:41:44"},
+{"id":"4","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 68b182f6e5917.jpg","ip_address":"::1","created_at":"2026-04-22 12:41:44"},
+{"id":"5","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 68b17e3a9d08b.jpg","ip_address":"::1","created_at":"2026-04-22 12:41:44"},
+{"id":"6","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: mars_kkopaudkotasemarang.mp3","ip_address":"::1","created_at":"2026-04-22 12:41:44"},
+{"id":"7","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827172315.jpg","ip_address":"::1","created_at":"2026-04-22 12:42:40"},
+{"id":"8","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827144459.jpg","ip_address":"::1","created_at":"2026-04-22 12:42:40"},
+{"id":"9","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827144514.jpg","ip_address":"::1","created_at":"2026-04-22 12:42:40"},
+{"id":"10","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827144531.jpg","ip_address":"::1","created_at":"2026-04-22 12:42:40"},
+{"id":"11","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827172452.jpg","ip_address":"::1","created_at":"2026-04-22 12:42:40"},
+{"id":"12","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827144602.jpg","ip_address":"::1","created_at":"2026-04-22 12:42:41"},
+{"id":"13","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827172351.jpg","ip_address":"::1","created_at":"2026-04-22 12:42:41"},
+{"id":"14","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827172302.jpg","ip_address":"::1","created_at":"2026-04-22 12:42:41"},
+{"id":"15","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827144648.jpg","ip_address":"::1","created_at":"2026-04-22 12:42:41"},
+{"id":"16","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827144707.jpg","ip_address":"::1","created_at":"2026-04-22 12:42:41"},
+{"id":"17","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827144724.jpg","ip_address":"::1","created_at":"2026-04-22 12:42:41"},
+{"id":"18","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827144751.jpg","ip_address":"::1","created_at":"2026-04-22 12:42:41"},
+{"id":"19","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827144810.jpg","ip_address":"::1","created_at":"2026-04-22 12:42:41"},
+{"id":"20","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827145229.jpg","ip_address":"::1","created_at":"2026-04-22 12:42:41"},
+{"id":"21","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827172517.jpg","ip_address":"::1","created_at":"2026-04-22 12:42:41"},
+{"id":"22","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827172541.jpg","ip_address":"::1","created_at":"2026-04-22 12:42:41"},
+{"id":"23","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827144856.jpg","ip_address":"::1","created_at":"2026-04-22 12:42:41"},
+{"id":"24","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827173437.jpg","ip_address":"::1","created_at":"2026-04-22 12:42:41"},
+{"id":"25","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827154504.jpg","ip_address":"::1","created_at":"2026-04-22 12:42:41"},
+{"id":"26","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827173536.jpg","ip_address":"::1","created_at":"2026-04-22 12:42:41"},
+{"id":"27","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827152540.jpg","ip_address":"::1","created_at":"2026-04-22 12:42:41"},
+{"id":"28","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827172603.jpg","ip_address":"::1","created_at":"2026-04-22 12:42:41"},
+{"id":"29","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827172625.jpg","ip_address":"::1","created_at":"2026-04-22 12:42:41"},
+{"id":"30","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827152622.jpg","ip_address":"::1","created_at":"2026-04-22 12:42:41"},
+{"id":"31","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827172713.jpg","ip_address":"::1","created_at":"2026-04-22 12:42:41"},
+{"id":"32","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827152656.jpg","ip_address":"::1","created_at":"2026-04-22 12:42:41"},
+{"id":"33","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827152723.jpg","ip_address":"::1","created_at":"2026-04-22 12:42:41"},
+{"id":"34","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827172740.jpg","ip_address":"::1","created_at":"2026-04-22 12:42:41"},
+{"id":"35","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827173603.jpg","ip_address":"::1","created_at":"2026-04-22 12:42:41"},
+{"id":"36","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827152801.jpg","ip_address":"::1","created_at":"2026-04-22 12:42:41"},
+{"id":"37","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827172812.jpg","ip_address":"::1","created_at":"2026-04-22 12:42:41"},
+{"id":"38","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827160419.jpg","ip_address":"::1","created_at":"2026-04-22 12:42:41"},
+{"id":"39","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: kalender_kegiatan_2025.pdf","ip_address":"::1","created_at":"2026-04-22 13:02:17"},
+{"id":"40","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: kalender_kegiatan_2025.pdf","ip_address":"::1","created_at":"2026-04-22 13:02:17"},
+{"id":"41","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: kalender_kegiatan_2025.pdf","ip_address":"::1","created_at":"2026-04-22 13:02:18"},
+{"id":"42","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827172315.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:32"},
+{"id":"43","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827144039.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:32"},
+{"id":"44","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827144459.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:32"},
+{"id":"45","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 68b182f6e5917.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:32"},
+{"id":"46","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 68b17e3a9d08b.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:32"},
+{"id":"47","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: mars_kkopaudkotasemarang.mp3","ip_address":"::1","created_at":"2026-04-22 13:02:32"},
+{"id":"48","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827172315.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:38"},
+{"id":"49","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827144459.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:38"},
+{"id":"50","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827144039.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:38"},
+{"id":"51","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827144514.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:38"},
+{"id":"52","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827144531.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:38"},
+{"id":"53","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827172452.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:38"},
+{"id":"54","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827144602.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:38"},
+{"id":"55","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827172351.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:38"},
+{"id":"56","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827172302.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:38"},
+{"id":"57","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827144648.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:38"},
+{"id":"58","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827144707.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:38"},
+{"id":"59","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827144724.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:39"},
+{"id":"60","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827144751.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:39"},
+{"id":"61","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827144810.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:39"},
+{"id":"62","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827145229.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:39"},
+{"id":"63","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827172517.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:39"},
+{"id":"64","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827172541.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:39"},
+{"id":"65","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827144856.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:39"},
+{"id":"66","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827173437.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:39"},
+{"id":"67","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827154504.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:39"},
+{"id":"68","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827173536.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:39"},
+{"id":"69","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827152540.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:39"},
+{"id":"70","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827172603.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:39"},
+{"id":"71","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827172625.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:39"},
+{"id":"72","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827152622.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:39"},
+{"id":"73","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827172713.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:39"},
+{"id":"74","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827152656.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:39"},
+{"id":"75","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827152723.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:39"},
+{"id":"76","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827172740.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:39"},
+{"id":"77","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827173603.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:39"},
+{"id":"78","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827152801.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:39"},
+{"id":"79","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827172812.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:39"},
+{"id":"80","user_id":null,"username":"guest","action":"FILE_ACCESS","details":"Downloaded: 20250827160419.jpg","ip_address":"::1","created_at":"2026-04-22 13:02:39"},
+{"id":"81","user_id":"12","username":"guest","action":"LOGIN","details":"Successful login","ip_address":"::1","created_at":"2026-04-22 13:23:59"},
+{"id":"82","user_id":"12","username":"adminkko","action":"DATA_SEARCH","details":"Searched anggota by: candrawijayanto340@gmail.com","ip_address":"::1","created_at":"2026-04-22 13:38:41"},
+{"id":"83","user_id":"1","username":"guest","action":"LOGIN","details":"Successful login","ip_address":"::1","created_at":"2026-04-22 21:17:19"},
+{"id":"84","user_id":"1","username":"guest","action":"LOGIN","details":"Successful login","ip_address":"::1","created_at":"2026-04-23 09:27:36"},
+{"id":"85","user_id":"1","username":"guest","action":"LOGIN","details":"Successful login","ip_address":"::1","created_at":"2026-04-23 09:42:41"},
+{"id":"86","user_id":"1","username":"guest","action":"LOGIN","details":"Successful login","ip_address":"::1","created_at":"2026-04-23 14:33:27"},
+{"id":"87","user_id":"0","username":"guest","action":"LOGIN","details":"Successful login","ip_address":"::1","created_at":"2026-04-23 17:49:18"},
+{"id":"88","user_id":"0","username":"guest","action":"LOGIN","details":"Successful login","ip_address":"::1","created_at":"2026-04-23 21:03:18"},
+{"id":"89","user_id":"0","username":"guest","action":"LOGIN","details":"Successful login","ip_address":"::1","created_at":"2026-04-23 21:05:43"},
+{"id":"90","user_id":"0","username":"guest","action":"LOGIN","details":"Successful login","ip_address":"::1","created_at":"2026-04-23 21:06:15"},
+{"id":"91","user_id":"0","username":"guest","action":"LOGIN","details":"Successful login","ip_address":"::1","created_at":"2026-04-23 21:06:21"},
+{"id":"92","user_id":"0","username":"guest","action":"LOGIN","details":"Successful login","ip_address":"::1","created_at":"2026-04-23 21:06:29"},
+{"id":"93","user_id":"0","username":"guest","action":"LOGIN","details":"Successful login","ip_address":"::1","created_at":"2026-04-23 21:06:32"},
+{"id":"94","user_id":"0","username":"guest","action":"LOGIN","details":"Successful login","ip_address":"::1","created_at":"2026-04-23 21:06:39"},
+{"id":"95","user_id":"0","username":"guest","action":"LOGIN","details":"Successful login","ip_address":"::1","created_at":"2026-04-23 21:06:43"},
+{"id":"96","user_id":"0","username":"guest","action":"LOGIN","details":"Successful login","ip_address":"::1","created_at":"2026-04-23 21:07:09"},
+{"id":"97","user_id":"0","username":"guest","action":"LOGIN","details":"Successful login","ip_address":"::1","created_at":"2026-04-23 21:08:11"},
+{"id":"98","user_id":"0","username":"guest","action":"LOGIN","details":"Successful login","ip_address":"::1","created_at":"2026-04-24 09:10:39"},
+{"id":"99","user_id":"0","username":"guest","action":"LOGIN","details":"Successful login","ip_address":"::1","created_at":"2026-04-28 01:30:07"},
+{"id":"100","user_id":"0","username":"guest","action":"LOGIN","details":"Successful login","ip_address":"::1","created_at":"2026-04-28 13:21:05"},
+{"id":"101","user_id":"0","username":"guest","action":"LOGIN","details":"Successful login","ip_address":"::1","created_at":"2026-04-28 19:52:48"},
+{"id":"102","user_id":"0","username":"guest","action":"LOGIN","details":"Successful login","ip_address":"::1","created_at":"2026-04-29 08:52:12"},
+{"id":"103","user_id":"1","username":"admin","action":"CREATE_PENGUMUMAN","details":"Tambah pengumuman: Pembukaan KKO","ip_address":"::1","created_at":"2026-04-29 09:14:49"},
+{"id":"104","user_id":"0","username":"guest","action":"LOGIN","details":"Successful login","ip_address":"::1","created_at":"2026-04-30 07:02:05"},
+{"id":"105","user_id":"1","username":"admin","action":"CREATE_BUKU_TAMU_EVENT","details":"Buat event buku tamu: A","ip_address":"::1","created_at":"2026-04-30 07:09:43"},
+{"id":"106","user_id":"1","username":"admin","action":"EXPORT_PENDAFTAR","details":"Export data pendaftar (8 records)","ip_address":"::1","created_at":"2026-04-30 07:50:03"},
+{"id":"107","user_id":"1","username":"admin","action":"EXPORT_BUKU_TAMU","details":"Export data buku tamu (1 records)","ip_address":"::1","created_at":"2026-04-30 07:52:00"},
+{"id":"108","user_id":"1","username":"admin","action":"toggle_berita_status","details":"Ubah status berita ID 1 ke published","ip_address":"::1","created_at":"2026-04-30 08:01:25"},
+{"id":"109","user_id":"1","username":"admin","action":"UPDATE_PENGUMUMAN","details":"Edit pengumuman: Pembukaan KKO","ip_address":"::1","created_at":"2026-04-30 08:26:57"},
+{"id":"110","user_id":"1","username":"admin","action":"UPDATE_PENGUMUMAN","details":"Edit pengumuman: Pembukaan KKO","ip_address":"::1","created_at":"2026-04-30 08:27:47"},
+{"id":"111","user_id":"1","username":"admin","action":"toggle_berita_status","details":"Ubah status berita ID 1 ke draft","ip_address":"::1","created_at":"2026-04-30 08:27:56"},
+{"id":"112","user_id":"1","username":"admin","action":"CREATE_GALERI","details":"Tambah galeri: ada","ip_address":"::1","created_at":"2026-04-30 08:28:19"},
+{"id":"113","user_id":"1","username":"admin","action":"DELETE_GALERI","details":"Hapus galeri: ada","ip_address":"::1","created_at":"2026-04-30 08:30:20"},
+{"id":"114","user_id":"1","username":"admin","action":"CREATE_KEGIATAN","details":"Tambah kegiatan: aa","ip_address":"::1","created_at":"2026-04-30 08:31:08"},
+{"id":"115","user_id":"1","username":"admin","action":"CREATE_KEGIATAN","details":"Tambah kegiatan: aa","ip_address":"::1","created_at":"2026-04-30 08:31:57"},
+{"id":"116","user_id":"1","username":"admin","action":"DELETE_KEGIATAN","details":"Hapus kegiatan: aa","ip_address":"::1","created_at":"2026-04-30 08:32:02"},
+{"id":"117","user_id":"1","username":"admin","action":"DELETE_KEGIATAN","details":"Hapus kegiatan: aa","ip_address":"::1","created_at":"2026-04-30 08:32:06"},
+{"id":"118","user_id":"1","username":"admin","action":"CREATE_PENGURUS","details":"Tambah pengurus: Funiculi Funicula","ip_address":"::1","created_at":"2026-04-30 08:32:52"},
+{"id":"119","user_id":"1","username":"admin","action":"DELETE_PENGURUS","details":"Hapus pengurus: Funiculi Funicula","ip_address":"::1","created_at":"2026-04-30 08:33:01"},
+{"id":"120","user_id":"1","username":"admin","action":"LOGOUT","details":null,"ip_address":"::1","created_at":"2026-04-30 08:40:52"},
+{"id":"121","user_id":"0","username":"guest","action":"LOGIN","details":"Successful login","ip_address":"::1","created_at":"2026-04-30 08:40:59"},
+{"id":"122","user_id":"0","username":"guest","action":"LOGIN","details":"Successful login","ip_address":"::1","created_at":"2026-04-30 11:13:38"},
+{"id":"123","user_id":"1","username":"admin","action":"toggle_berita_status","details":"Ubah status berita ID 1 ke published","ip_address":"::1","created_at":"2026-04-30 11:25:20"}
+]
+}
+,{"type":"table","name":"anggota","database":"kkosemarang_web","data":
+[
+{"id":"3","nama":"Liana","tempat_lahir":"Grobogan","tanggal_lahir":"2025-09-01","jenis_kelamin":"Perempuan","pendidikan_terakhir":"S1 Teknik Informatika","alamat":"Jl Gasem Indah","no_hp":"085726170059","email":"triyuliana0907@gmail.com","tanggal_daftar":"2025-09-01 12:10:55","status":"Ditolak","updated_at":null},
+{"id":"5","nama":"Syifa","tempat_lahir":"Tegal","tanggal_lahir":"2015-02-01","jenis_kelamin":"Perempuan","pendidikan_terakhir":"S1 Teknik Informatika","alamat":"Semarang","no_hp":"081234567890","email":"kamilahfsyifa@gmail.com","tanggal_daftar":"2025-09-01 16:07:16","status":"Diterima","updated_at":null},
+{"id":"6","nama":"kiki","tempat_lahir":"pml","tanggal_lahir":"2005-08-06","jenis_kelamin":"Perempuan","pendidikan_terakhir":"S1 - Teknik Informatika","alamat":"semarang barat","no_hp":"083143756636","email":"sakinahdwiagus@gmail.com","tanggal_daftar":"2025-09-09 04:53:05","status":"Menunggu","updated_at":null},
+{"id":"7","nama":"HERNI, S.Pd.","tempat_lahir":"Teluk Betung","tanggal_lahir":"1974-10-27","jenis_kelamin":"Perempuan","pendidikan_terakhir":"S1-PAUD","alamat":"Fasindo Permata Garden Bangetayu , Block Kayumanis 3 NO.21 Kel.Penggaron Lor Kecamatan Genuk Kota Semarang","no_hp":"085229306726","email":"runjungherni@gmail.com","tanggal_daftar":"2025-09-12 10:41:30","status":"Diterima","updated_at":null},
+{"id":"8","nama":"Faidza Fatta R","tempat_lahir":"Kabupaten Semarang","tanggal_lahir":"1992-06-16","jenis_kelamin":"Perempuan","pendidikan_terakhir":"S1 Kesehatan Masyarakat","alamat":"Jl Tirtomukti Raya no 987","no_hp":"085740975709","email":"faidza92@gmail.com","tanggal_daftar":"2025-09-27 17:13:00","status":"Menunggu","updated_at":null},
+{"id":"10","nama":"Dhita Fitriani ","tempat_lahir":"SEMARANG","tanggal_lahir":"1984-06-27","jenis_kelamin":"Perempuan","pendidikan_terakhir":"S1 TEKNIK KIMIA ","alamat":"Jl. Mahoni no 123 RT 06 RW 03 Sampangan Semarang ","no_hp":"089607790520","email":"dhitafitriani27@gmail.com","tanggal_daftar":"2026-01-02 05:46:37","status":"Menunggu","updated_at":null},
+{"id":"11","nama":"Dhita Fitriani ","tempat_lahir":"SEMARANG","tanggal_lahir":"1984-06-27","jenis_kelamin":"Perempuan","pendidikan_terakhir":"S1 TEKNIK KIMIA ","alamat":"Jl. Mahoni no 123 RT 06 RW 03 Sampangan Semarang ","no_hp":"089607790520","email":"dhitafitriani27@gmail.com","tanggal_daftar":"2026-01-02 05:47:00","status":"Ditolak","updated_at":"2026-04-30 07:25:04"},
+{"id":"12","nama":"Candra Wijayanto","tempat_lahir":"kendal","tanggal_lahir":"2013-05-22","jenis_kelamin":"Laki-laki","pendidikan_terakhir":"S1 - Pendidikan Paud","alamat":"Bakalan, RT03\/RW03, Bangunsari, Pageruyung, Kendal","no_hp":"085183052810","email":"candrawijayanto340@gmail.com","tanggal_daftar":"2026-04-22 13:38:27","status":"Diterima","updated_at":"2026-04-30 07:22:38"}
+]
+}
+,{"type":"table","name":"berita","database":"kkosemarang_web","data":
+[
+{"id":"1","judul":"ada","slug":"ada","konten":"halo","kategori":"artikel","gambar":"BERITA_20260430075925_da944d.png","status":"published","penulis":"1","views":"0","created_at":"2026-04-30 07:59:26","updated_at":"2026-04-30 11:25:20","highlight":"0"}
+]
+}
+,{"type":"table","name":"buku_tamu","database":"kkosemarang_web","data":
+[
+{"id":"1","event_id":"1","nama":"dece","instansi":"udinus","kecamatan":"semarang","no_hp":"1224474","foto":"20260418004907_17764481315871954636978492118621.jpg","checkin_at":"2026-04-17 17:49:07","checkout_at":"2026-04-17 17:50:12","created_at":"2026-04-17 17:49:07"},
+{"id":"2","event_id":"2","nama":"dece","instansi":"udinus","kecamatan":"semarang tengah","no_hp":"1224474","foto":"20260418013028_17764506173713367158910754831147.jpg","checkin_at":"2026-04-17 18:30:28","checkout_at":null,"created_at":"2026-04-17 18:30:28"},
+{"id":"3","event_id":"3","nama":"Shshsv","instansi":"Dhsisb","kecamatan":"Nganu","no_hp":"123","foto":"20260418211855_17765219252963671898011257563468.jpg","checkin_at":"2026-04-18 14:18:55","checkout_at":"2026-04-18 14:20:21","created_at":"2026-04-18 14:18:55"},
+{"id":"4","event_id":"3","nama":"kiki","instansi":"dbs","kecamatan":"udhczjvhs","no_hp":"083143756636","foto":"20260418213503_01-kanban-board.png.png","checkin_at":"2026-04-18 14:35:03","checkout_at":null,"created_at":"2026-04-18 14:35:03"}
+]
+}
+,{"type":"table","name":"buku_tamu_checkin","database":"kkosemarang_web","data":
+[
+{"id":"1","event_id":"4","guest_name":"Candra Wijayanto","guest_origin":"ABC","guest_phone":"085183052810","guest_email":"candrawijayanto340@gmail.com","checkin_time":"2026-04-30 07:09:51","ip_address":"::1"}
+]
+}
+,{"type":"table","name":"event_buku_tamu","database":"kkosemarang_web","data":
+[
+{"id":"1","nama_event":"dece kambink","deskripsi":"vasjhydbgeja","tanggal_event":"2026-04-19","lokasi":"semarang","token":"ecd65694c63814ff0d8048e7db84caa7","created_by":"","created_at":"2026-04-17 17:46:16"},
+{"id":"2","nama_event":"kki","deskripsi":"fdshjfbaes","tanggal_event":"2026-04-30","lokasi":"pedurungan","token":"f4bff0b5f4ecb925279e95fd9a69f11c","created_by":"","created_at":"2026-04-17 18:29:42"},
+{"id":"3","nama_event":"abc","deskripsi":"dfsjfsd","tanggal_event":"2026-04-20","lokasi":"kko","token":"2620379792df42cb9a2077a403e89ddd","created_by":"","created_at":"2026-04-18 14:18:02"},
+{"id":"4","nama_event":"A","deskripsi":null,"tanggal_event":"2026-04-30","lokasi":"BB","token":"169f661ef039c99444e998af214f1fa7665e295b04aab77336030acd4f58d5ba","created_by":"1","created_at":"2026-04-30 07:09:43"}
+]
+}
+,{"type":"table","name":"galeri","database":"kkosemarang_web","data":
+[
+{"id":"1","judul":"Workshop AI","tanggal":"2025-06-23 00:00:00","foto":"68b6e82126c34.jpg,68b6e998cb928.jpg,68b8328856d2f.jpg,68b83288573a4.jpg,68b8328857543.jpg,68b83288576ba.jpg,68b8328857874.jpg,68b8328857a0b.jpg,68b8328857b12.jpg"},
+{"id":"2","judul":"Workshop Public Speaking","tanggal":"2025-07-26 09:00:00","foto":"68b6ed7c4b6d6.jpg,68b833a514a36.jpg,68b837d235389.jpg,68b837deea633.jpg,68b837deea8a0.jpg,68b837deeab00.jpg,68b837deead4c.jpg,68b837f339320.jpg,68b837f33980d.jpg,68b837f339af2.jpg,68b837f339f7d.jpg,68b837f33a360.jpg,68b837f33a4a3.jpg,68b83814a03f9.jpg,68b83814a06ac.jpg,68b83814a0a55.jpg,68b83814a0d8e.jpg,68b83814a1177.jpg,68b83814a1477.jpg,68b83814a1967.jpg,68b8385c4bcbd.jpg,68b8385c4c12c.jpg,68b8385c4c541.jpg,68b8385c4c75a.jpg,68b8385c4ca33.jpg,68b8385c4ccd2.jpg,68b8385c4d054.jpg,68b8385c4d321.jpg,68b8385c4d730.jpg,68b8387373190.jpg,68b8387373424.jpg,68b83873735a7.jpg,68b83873738e9.jpg,68b8387373d6c.jpg,68b8387374075.jpg"},
+{"id":"3","judul":"Workshop Deep Learning","tanggal":"2025-02-01 09:00:00","foto":"68beb6a92df6e.jpg,68beb6a92f7cc.jpg,68beb6a930c7e.jpg,68beb6a932065.jpg,68beb6a933691.jpg,68beb6a934791.jpg,68beb6a935b7f.jpg,68beb6a936e8e.jpg,68beb6a9382a8.jpg,68beb6a9394d5.jpg,68beb6a93a953.jpg,68beb6a93bb2a.jpg,68beb6a93cfde.jpg,68beb6a93e60f.jpg,68beb6a93f853.jpg,68beb6a940dce.jpg"},
+{"id":"4","judul":"Workshop Digitalisasi Dengan Autocrat","tanggal":"2025-08-29 15:47:00","foto":"68c28cba3ded2.jpeg"}
+]
+}
+,{"type":"table","name":"kegiatan","database":"kkosemarang_web","data":
+[
+{"id":"1","nama_kegiatan":"Workshop Public Speaking","foto":"68aeef5cac4ba.jpg,68aeef68034d5.jpg","tanggal":"2025-07-26","jam":"09:00:00","tempat":"KB TK Islam Al Fath","deskripsi":"Workshop “Dasar-Dasar Public Speaking di Lingkungan PAUD” yang diselenggarakan oleh KKO PAUD Kota Semarang merupakan kegiatan pengembangan diri bagi para pendidik PAUD agar mampu berbicara dengan percaya diri, penuh empati, dan bermakna. Kegiatan ini dilaksanakan pada Sabtu, 26 Juli 2025 di Sekretariat KKO PAUD KB TK Islam Al Fath, mulai pukul 09.00 hingga 12.00 WIB. Melalui materi yang disampaikan oleh pembicara Nadya Hasna Pranita dan Angelia Arianti Pratama serta dimoderatori oleh Meyla Aqshal Rosihan, peserta diajak memahami pentingnya public speaking dalam dunia pendidikan anak usia dini serta belajar mengatasi rasa gugup saat berbicara. Kegiatan ini terbuka untuk umum, gratis, dan memiliki kuota terbatas.\r\n","materi":""},
+{"id":"2","nama_kegiatan":"Workshop AI","foto":"68aef601c5221.jpg,68aef60fae64b.jpg,68aef61bcd4bb.jpg","tanggal":"2025-06-23","jam":"13:00:00","tempat":"Kecamatan Semarang Tengah","deskripsi":"Dalam rangka meningkatkan literasi digital pendidik PAUD, Diskominfo Kota Semarang bekerja sama dengan KKO PAUD Kota Semarang menyelenggarakan kegiatan Cerdas Digital pada 23 Juni 2025 di Aula Kantor Kecamatan Semarang Tengah. Kegiatan ini dihadiri oleh berbagai pihak, mulai dari pejabat Diskominfo, anggota DPRD Kota Semarang, hingga Ketua Umum KKO PAUD yang memberikan apresiasi penuh terhadap terselenggaranya acara tersebut. Melalui program ini, para pendidik dan tenaga kependidikan PAUD diharapkan mampu memahami pentingnya kecakapan digital sehingga dapat menanamkan budaya bijak bermedia sejak dini kepada anak-anak.","materi":null},
+{"id":"3","nama_kegiatan":"Workshop Deep Learning","foto":"68b17e3a9d08b.jpg,68b17e47f2046.jpg,68b17e55c95a3.jpg","tanggal":"2025-02-01","jam":"09:00:00","tempat":"Gedung Perpustakaan Provinsi Jawa Tengah","deskripsi":"Workshop Pendidikan bertema “Pembelajaran Mendalam” yang diselenggarakan oleh KKO PAUD Kota Semarang pada Sabtu, 1 Februari 2025, menghadirkan sesi pelatihan intensif dari pukul 09.00 hingga 15.00 WIB di Gedung Perpustakaan dan Arsip Provinsi Jawa Tengah. Kegiatan ini ditujukan untuk meningkatkan kapasitas tenaga pendidik PAUD melalui pendekatan *deep learning* dalam proses pembelajaran. Antusiasme peserta sangat tinggi hingga kuota terpenuhi lebih awal, menandakan besarnya minat terhadap inovasi pembelajaran yang lebih mendalam, efektif, dan aplikatif di dunia pendidikan anak usia dini.","materi":null},
+{"id":"4","nama_kegiatan":"Jurus Jitu Menjadi Guru Asyik dan Menyenangkan","foto":"68b182f6e5917.jpg","tanggal":"2024-10-06","jam":"10:00:00","tempat":"Kampus 4 Universitas PGRI Semarang","deskripsi":"Jurus Jitu Menjadi Guru Asyik dan Menyenangkan","materi":""},
+{"id":"5","nama_kegiatan":"Workshop Digitalisasi","foto":"68c2880cb76c3.jpeg,68c28c309eceb.jpeg","tanggal":"2025-08-29","jam":"13:16:00","tempat":"Kelurahan Lamper Lor","deskripsi":"Workshop Digitalisasi","materi":"68c28c309ef17.pdf"},
+{"id":"6","nama_kegiatan":"Penerimaan Magang Diskominfo Dengan Mahasiswa UIN Walisongo","foto":"68c2714708336.jpeg","tanggal":"2025-09-11","jam":"13:00:00","tempat":"TK IT Almawaddah","deskripsi":"Koordinasi dan Mapping Magang ke Satuan Pendidikan TK Madinatul Ilmi dan TK Raudhatul Muhsinin","materi":"68c2714708528.pdf"},
+{"id":"7","nama_kegiatan":"Penerimaan Magang Diskominfo dengan Mahasiswa UIN Jurusan Teknik Informatika ","foto":"68c295ae89084.jpeg","tanggal":"2025-09-11","jam":"16:15:00","tempat":"Balai Kelurahan Lamper Lor Kecamatan Semarang Selatan","deskripsi":"Penerimaan Magang Diskominfo , Mahasiswa UIN Walisongo Semarang Jurusan Teknik Informatika bersama KKO PAUD Kota Semarang oleh Ketua Umum Bapak Viveno Susilo, S.E di Ruang Balai Desa Kelurahan Lamper Lor Kecamatan Semarang Selatan sekaligus Mapping Satuan Pendidikan di TK Raudhatul Muhsinin dan KB TK Madinatul Ilmi. Pelaksanaan akan dilaksanakan per 22 Desember 2025 sampai 13 Februari 2026","materi":""},
+{"id":"8","nama_kegiatan":"Penyerahan Laporan Akhir Magang","foto":"68c2d33b40410.jpeg","tanggal":"2025-09-11","jam":"20:46:00","tempat":"WAG Magang Udinus","deskripsi":"Penyerahan Laporan Akhir Magang Udinus","materi":"68c2d33b405fb.pdf"},
+{"id":"9","nama_kegiatan":"Pemberian Piagam Penghargaan Mahasiswa Magang KKO PAUD","foto":"68c2de5dc20de.jpeg","tanggal":"2025-09-11","jam":"21:30:00","tempat":"WAG Magang Udinus","deskripsi":"Pemberian Piagam Penghargaan","materi":"68c2de3fa27bd.pdf"},
+{"id":"10","nama_kegiatan":"LOMBA KREATIVITAS GURU DAN SISWA","foto":"68c9f0df8be71.jpg","tanggal":"2025-09-27","jam":"08:00:00","tempat":"Aula Kantor Balaikota Semarang ","deskripsi":"LOMBA KREATIVITAS GURU dan SISWA?\r\nHaii Sobat KKO PAUD KOTA SEMARANG... ??\r\n\r\nDalam rangka memperingati HUT Ke- 9 *KKO PAUD KOTA SEMARANG*, Mengajak dan Mengundang Para Guru, KS, Operator dan Siswa se Kota Semarang untuk menunjukkan kreativitas terbaiknya melalui Lomba- Lomba menarik. \r\n? Ayo Tunjukkan Kemampuan dan Kreativitas terbaikmu dalam pembuatan APE dari bahan limbah, Berkreasi dengan Clay, Membuat Poster Digital, Membuat Video Pendek, Keahlian berhitung dengan Jarimatika, Berolah tubuh dengan Senam Anak Indonesia Hebat??\r\n*?Pendaftaran Lomba* \r\nbisa akses di link yang tercantum dalam Flyer Kegiatan\r\nhttps:\/\/s.id\/LombaKKO\r\n\r\n*?Benefit Juara*\r\n? Piala Kejuaraan\r\n? Sertifikat Juara 1,2,3\r\n? Goodie Bag \r\n\r\n?Kontak Panitia\r\nLangsung menghubungi PJ kegiatan dalam Flyer masing- masing Lomba\r\n\r\n*?Semangat Selalu untuk Satu Langkah, Sembilan Tahun, Sejuta Perubahan*","materi":""},
+{"id":"11","nama_kegiatan":"Pelepasan Mahasiswa Magang ","foto":"68ddb3cdb2f92.jpg,68ddb3cdb4605.jpg,68ddb3cdb5cf6.jpg","tanggal":"2025-10-01","jam":"16:53:00","tempat":"Whismie ","deskripsi":"Rabu, 01 Oktober 2025 dilakukan kegiatan Pelepasan Mahasiswa Magang dari Universitas STEKOM.dan UNNES Semarang \r\nPara mahasiswa magang yang sudah menyelesaikan masa magang selama kurang lebih dua bulan tersebut memberikan kesan baik selama magang di KKO PAUD KOTA SEMARANG dan semoga pengalaman dan ilmu yang diperoleh selama magang di KKO PAUD KOTA SEMARANG dapat dimanfaatkan dengan baik.\r\n","materi":""},
+{"id":"12","nama_kegiatan":"HUT Ke-9 KKO PAUD Kota Semarang ","foto":"68e21ac445896.jpg","tanggal":"2025-09-27","jam":"07:00:00","tempat":"Aula Balaikota ","deskripsi":"Ajang Lomba Siswa dan Guru, OPS serta KS dalam HUT Ke-9 KKO PAUD bersama 300 siswa \r\ndan 100 guru\r\nhttps:\/\/drive.google.com\/drive\/folders\/1zg66IIyulhwAsdbX-cgy8LyZ8g9sQPzr?usp=sharing\r\n\r\nhttps:\/\/drive.google.com\/drive\/folders\/1mPtZQCMNJNl7SwRYOwWozgVOeRP39BZ2","materi":""},
+{"id":"13","nama_kegiatan":"Workshop Kang Deden ","foto":"","tanggal":"2025-10-08","jam":"09:34:00","tempat":"UPGRIS Kampus 4","deskripsi":"https:\/\/drive.google.com\/drive\/folders\/1YOjHrakBPXv6Yv9Zpd24W-pg5A8iHsnn?usp=sharing","materi":""},
+{"id":"14","nama_kegiatan":"Bedah Dapodik bersama Pak Naz","foto":"","tanggal":"2019-10-08","jam":"09:35:00","tempat":"Hotel Siliwangi ","deskripsi":"https:\/\/photos.app.goo.gl\/D8mXQf35AfZCZ9Zq9","materi":""},
+{"id":"15","nama_kegiatan":"HEALING UNTUK HATI, SEMANGAT UNTUK BAKTI","foto":"68ec6ab3e23b0.jpg","tanggal":"2025-10-12","jam":"09:00:00","tempat":"Kalikesek Kabupaten Kendal","deskripsi":"Dalam rangka menjaga semangat dan kebersamaan para pengurusnya, Kelompok Kerja Operator (KKO) Pendidikan Anak Usia Dini (PAUD) Kota Semarang mengadakan acara refreshing ke destinasi alam yang memukau, Kalikesek, di Kabupaten Kendal, pada Minggu, 12 Oktober 2025.\r\n\r\nAcara ini bertujuan untuk melepas kepenatan setelah berbulan-bulan berkutat dengan rutinitas administratif dan Kegiatan , sekaligus memperkuat ikatan silaturahmi antar para pengurus KKO PAUD Kota Semarang \r\n\r\nDipilihnya Kalikesek sebagai lokasi bukan tanpa alasan. Destinasi wisata yang terletak di Kecamatan Singorojo ini menawarkan panorama bukit hijau yang menyejukkan mata dan menenangkan jiwa. Udara sejuk khas pegunungan serta hamparan kebun teh menjadi latar belakang sempurna untuk proses \"penyembuhan\" atau healing dari hiruk-pikuk kota.\r\n\r\nPara peserta terlihat antusias menjelajahi setiap sudut Kalikesek. Mereka tak melewatkan momen untuk berfoto di spot-spot ikonik, seperti di jembatan, terapi ikan dan di berbagai dekorasi instagenik lainnya. Tawa dan canda riang menggema, mengisi suasana pagi yang cerah, mencairkan segala kejenuhan.\r\n\r\nIni adalah momentum yang sangat kita butuhkan. Me-recharge energi positif di alam terbuka agar kita kembali lebih mndpt kesegaran dan semangat dengan hati yang lebih lapang dan senyum yang lebih cerah,\r\n\r\nTak hanya menikmati keindahan alam, acara ini juga dimanfaatkan untuk membangun kekompakan tim. Para pengurus saling bertukar cerita, pengalaman, dan keluh kesah tentang kegiatan HUT KKO PAUD KOTA SEMARANG yang ke - 9  pada tanggal 27-09-2025 kemarin \r\n\r\nKegiatan semacam ini diakui sangat penting untuk membangun teamwork yang solid. Sinergi yang terbangun diharapkan dapat diterjemahkan ke dalam kolaborasi yang lebih baik untuk memajukan kualitas KKO PAUD Kota Semarang.\r\n\r\n\"Ketika Pengurus bahagia, maka energi kebahagiaan itu akan terpancar kepada semua orang. Tujuan kita satu: menciptakan pengurus yang  plus,\" tutur Koordinator KKO PAUD Kota Semarang.\r\n\r\nDi akhir acara, seluruh peserta berkomitmen untuk membawa pulang semangat baru yang mereka dapatkan dari kedamaian Alam Kalikesek.\r\n\r\nKegiatan refreshing ini tidak hanya sekadar rekreasi, tetapi merupakan investasi untuk meningkatkan kualitas sumber daya manusia pengurus, yang pada ujungnya akan bermuara pada peningkatan kualitas KKO PAUD kota Semarang secara keseluruhan. Dengan jiwa yang telah segar kembali, pengurus KKO PAUD Kota Semarang siap menyambut tugas-tugas kegiatan dengan semangat dan cahaya baru","materi":""},
+{"id":"16","nama_kegiatan":"SQUAD GUNUNGPATI: EMPAT SAHABAT PENGGERAK KEMAJUAN ORGANISASI KKO PAUD KOTA SEMARANG ","foto":"68ec6b54303b0.jpg","tanggal":"2025-10-13","jam":"01:00:00","tempat":"-","deskripsi":"\r\n\r\nDalam dinamika organisasi Kelompok Kerja Operator (KKO) PAUD Kota Semarang, semangat kolaborasi dan dedikasi menjadi napas yang menghidupkan setiap programnya. Di antara banyaknya kontributor, ada satu tim dari Kecamatan Gunungpati yang bersinar layaknya sebuah \"squad\" yang kompak dan efektif. Mereka adalah Ibu Dewi, Ibu Ayu, Ibu Yeni, dan Ibu Fatik.\r\n\r\nKehadiran keempatnya bagai menemukan empat puzzle yang saling melengkapi, menciptakan gambar utuh kesuksesan berbagai inisiatif KKO PAUD. Mereka bukan hanya pengurus, tetapi merupakan penggerak, inovator, dan perekat kebersamaan. Berikut adalah kontribusi nyata \"Squad Gunungpati\" ini.\r\n\r\n1. Strategic Planner & Inovator Program (Bu Dewi)\r\n\r\nBu Dewi adalah arsitek di balik banyaknya program strategis. Dengan visinya yang jauh ke depan, ia merancang tema pelatihan dan workshop yang tidak hanya relevan tetapi juga antisipatif terhadap kebutuhan guru PAUD masa kini. Ia aktif menggali ide-ide baru, seperti integrasi pendidikan lingkungan atau pemanfaatan digital literacy dalam pembelajaran sederhana, sehingga KKO PAUD Kota Semarang selalu terdepan dalam inovasi.\r\n\r\n2. Creative Architect & Master Trainer (Bu Ayu)\r\n\r\nJika ide-ide brilian telah dirancang, Bu Ayu lah yang mentransformasikannya menjadi materi yang hidup dan mudah dicerna. Kepiawaiannya dalam merancang modul, lembar kerja, dan Alat Permainan Edukatif (APE) dari bahan bekas tidak diragukan lagi. Ia adalah master trainer yang mampu menularkan semangat kreativitas kepada para peserta pelatihan, membuat setiap sesi menjadi berkesan dan sangat aplikatif di lapangan.\r\n\r\n3. Dynamic Executor & Mobilizer (Bu Yeni)\r\n\r\nSebuah rencana yang hebat membutuhkan eksekutor yang tangguh. Di sinilah peran Bu Yeni menjadi kunci. Dengan energi dan semangatnya yang tak kenal lelah, ia memastikan semua program berjalan mulus. Mulai dari koordinasi lapangan, mobilisasi peserta, hingga penanganan logistik, semua ditangani dengan cekatan. Ia adalah dinamo yang menggerakkan semua rencana menjadi aksi nyata.\r\n\r\n4. The Bridge Builder & Heart of The Team (Bu Fatik)\r\n\r\nKelengkapan squad ini hadir dengan keikutsertaan Bu Fatik. Jika tiga pilar lainnya bergerak pada area teknis, Bu Fatik hadir sebagai perekat hubungan. Ia adalah \"jembatan\" yang menghubungkan Squad Gunungpati dengan pengurus dari kecamatan lain, Dinas Pendidikan, hingga orang tua murid. Komunikasi yang lancar, pendekatan yang hangat, dan kemampuannya membangun kekeluargaan adalah kontribusinya yang tak ternilai. Bu Fatik memastikan bahwa semangat kebersamaan dan sense of belonging tetap tinggi dalam setiap kegiatan.\r\n\r\nSinergi yang Menghasilkan Dampak Nyata\r\n\r\nKekuatan mereka tidak terletak pada individu, tetapi pada sinergi yang mereka bangun. Bu Dewi merancang strategi, Bu Ayu menyusun \"senjata\" pembelajarannya, Bu Yeni memimpin di garis depan eksekusi, dan Bu Fatik memastikan dukungan dan komunikasi berjalan optimal dari semua pihak.\r\n\r\nSinergi ini telah melahirkan dampak yang konkret:\r\n\r\n· Peningkatan Kapasitas Guru: Guru-guru PAUD di wilayah Gunungpati dan sekitarnya menunjukkan peningkatan kompetensi yang signifikan, terutama dalam hal administrasi pembelajaran dan kreativitas mengajar.\r\n· Program yang Lebih Terjangkau: Berkat inovasi APE dari bahan bekas yang digalakkan Bu Ayu, banyak sekolah bisa mengurangi biaya operasional tanpa mengurangi kualitas pembelajaran.\r\n· Jejaring yang Kuat dan Solid: Kehadiran Bu Fatik membuat komunikasi antar pengurus dan mitra menjadi lebih cair dan penuh kekeluargaan.\r\n· Efisiensi dan Kesuksesan Acara: Setiap pelatihan atau seminar yang digelar selalu berjalan tertib, meriah, dan mencapai tujuannya berkat pembagian peran yang solid dalam squad ini.\r\n\r\nPenutup: Sebuah Simfoni Kolaborasi\r\n\r\nBu Dewi, Bu Ayu, Bu Yeni, dan Bu Fatik adalah bukti hidup bahwa kerja tim yang solid mampu mendorong kemajuan organisasi secara signifikan. Mereka bagai sebuah simfoni; masing-masing memainkan alat musiknya dengan ahli, namun bersama-sama menciptakan harmonisasi indah yang menggerakkan hati dan pikiran.\r\n\r\nDedikasi, inovasi, eksekusi, dan hubungan yang dibangun oleh \"Squad Gunungpati\" ini tidak hanya memajukan KKO PAUD Kota Semarang di atas kertas, tetapi juga memantaskan hati dan mencerahkan masa depan pendidikan anak usia dini di kota ini. Mereka adalah sahabat, asset berharga, dan inspirasi bagi kita semua.\r\n\r\nTerima kasih tak terhingga untuk segala dedikasi, Bu Dewi, Bu Ayu, Bu Yeni, dan Bu Fatik. Semangat \"Squad Gunungpati\" adalah warisan terindah bagi kemajuan KKO PAUD Kota Semarang.\r\n","materi":""}
+]
+}
+,{"type":"table","name":"pengumuman","database":"kkosemarang_web","data":
+[
+{"id":"1","judul":"Pembukaan KKO","konten":"Pembukaan","status":"Nonaktif","created_at":"2026-04-29 09:14:49","updated_at":"2026-04-30 08:26:57"}
+]
+}
+,{"type":"table","name":"pengurus","database":"kkosemarang_web","data":
+[
+{"id":"1","nama":"Dyah Ratna Harimurti, S.Sos, M.AP","jabatan":"Pembina","foto":"20250827172315.jpg","pendidikan_terakhir":"S2"},
+{"id":"2","nama":"Viveno Susilo, S.E","jabatan":"Ketua Umum","foto":"20250827144459.jpg","pendidikan_terakhir":"S1"},
+{"id":"3","nama":"Murgiyanti, S.Pd, M.Pd","jabatan":"Ketua Harian","foto":"20250827144039.jpg","pendidikan_terakhir":"S2"},
+{"id":"4","nama":"Dewi Sulistiyowati, S.Pd","jabatan":"Sekretaris 1","foto":"20250827144514.jpg","pendidikan_terakhir":"S1"},
+{"id":"70","nama":"Arwan Setyo Edi","jabatan":"Sekretaris 2","foto":"20250904223212.jpg","pendidikan_terakhir":"SMA"},
+{"id":"5","nama":"Ridhokah, S.Pd","jabatan":"Bendahara 1","foto":"20250827144531.jpg","pendidikan_terakhir":"S1"},
+{"id":"6","nama":"Dhanu Anggoro","jabatan":"Bendahara 2","foto":"20250827172452.jpg","pendidikan_terakhir":"SMA"},
+{"id":"7","nama":"Wisnu Wijaya, S.Ak","jabatan":"Bidang TIK","foto":"20250827144602.jpg","pendidikan_terakhir":"S1"},
+{"id":"8","nama":"Novi Prastopo","jabatan":"Bidang TIK 2","foto":"20250827172351.jpg","pendidikan_terakhir":"SMK"},
+{"id":"9","nama":"Aslamiyah, S.HI","jabatan":"Bidang TIK 3","foto":"20250827172302.jpg","pendidikan_terakhir":"S1"},
+{"id":"10","nama":"Muhammad Ainun Na'im, S,Pd","jabatan":"Bidang Organisasi 1","foto":"20250827144648.jpg","pendidikan_terakhir":"S1"},
+{"id":"11","nama":"Sriwidodo","jabatan":"Bidang Organisasi 2","foto":"20250827144707.jpg","pendidikan_terakhir":"SMA"},
+{"id":"12","nama":"Budi Rahayu, S.E","jabatan":"Bidang Humas 1","foto":"20250827144724.jpg","pendidikan_terakhir":"S1"},
+{"id":"13","nama":"Herni, S.Pd","jabatan":"Bidang Humas 2","foto":"20250827144751.jpg","pendidikan_terakhir":"S1"},
+{"id":"14","nama":"Indah Roostiorini, A.Md","jabatan":"Bidang Humas 3","foto":"20250827144810.jpg","pendidikan_terakhir":"D3"},
+{"id":"15","nama":"Niken Lestari, S.Pd","jabatan":"Bidang Sosial, Ekonomi, dan Kemasyarakatan 1","foto":"20250827145229.jpg","pendidikan_terakhir":"S1"},
+{"id":"16","nama":"Suyati, S.Pd","jabatan":"Bidang Sosial, Ekonomi, dan Kemasyarakatan 2","foto":"20250827172517.jpg","pendidikan_terakhir":"S1"},
+{"id":"17","nama":"Khlara Martina Sagana, S.Psi","jabatan":"Bidang Pendidikan dan Pelatihan 1","foto":"20250827172541.jpg","pendidikan_terakhir":"S1"},
+{"id":"18","nama":"Susi Dewi, S.Pd","jabatan":"Bidang Pendidikan dan Pelatihan 2","foto":"20250827144856.jpg","pendidikan_terakhir":"S1"},
+{"id":"19","nama":"Oktarina Sakti N","jabatan":"Anggota","foto":"20250827173437.jpg","pendidikan_terakhir":"S1"},
+{"id":"20","nama":"Sri Hartini, S.Pd","jabatan":"Anggota","foto":"20250827154504.jpg","pendidikan_terakhir":"S1"},
+{"id":"21","nama":"Oktarina Dwi Wiryawanti,S.Pd","jabatan":"Anggota","foto":"20250827173536.jpg","pendidikan_terakhir":"S1"},
+{"id":"23","nama":"Witono","jabatan":"Anggota","foto":"20250827152540.jpg","pendidikan_terakhir":"SMK"},
+{"id":"24","nama":"Silvia Dian Kumalasari, S.Gz, S.H","jabatan":"Anggota","foto":"20250827172603.jpg","pendidikan_terakhir":"S1"},
+{"id":"25","nama":"Sari Diajeng Hendratun, S.Pd","jabatan":"Anggota","foto":"20250827172625.jpg","pendidikan_terakhir":"S1"},
+{"id":"26","nama":"Sungatmi, S.Pd","jabatan":"Anggota","foto":"20250827152622.jpg","pendidikan_terakhir":"S1"},
+{"id":"27","nama":"Agustin Priharyanti, S.S","jabatan":"Anggota","foto":"20250827172713.jpg","pendidikan_terakhir":"S1"},
+{"id":"28","nama":"Evi Sulistiya Ariani, S.Pd","jabatan":"Anggota","foto":"20250827152656.jpg","pendidikan_terakhir":"S1"},
+{"id":"29","nama":"Siti Zainun, S.Pd","jabatan":"Anggota","foto":"20250827152723.jpg","pendidikan_terakhir":"S1"},
+{"id":"30","nama":"Chikmatun Fatihah","jabatan":"Anggota","foto":"20250827172740.jpg","pendidikan_terakhir":"SMA"},
+{"id":"31","nama":"Yeni Sukasih","jabatan":"Anggota","foto":"20250827173603.jpg","pendidikan_terakhir":"D3"},
+{"id":"32","nama":"Ika Nila Wardani, S.Pd","jabatan":"Anggota","foto":"20250827152801.jpg","pendidikan_terakhir":"S1"},
+{"id":"33","nama":"Norma Setyarini, M.Pd","jabatan":"Anggota","foto":"20250827172812.jpg","pendidikan_terakhir":"S2"},
+{"id":"34","nama":"Miftakhul Khasanah, S.Pd","jabatan":"Anggota","foto":"20250827160419.jpg","pendidikan_terakhir":"S1"}
+]
+}
+,{"type":"table","name":"user","database":"kkosemarang_web","data":
+[
+{"id":"1","username":"admin","password":"$2y$12$rlzJ7\/pjcjbaOmu\/RjM29.UZJZ4X.8x3kmZ1XSAgyg17OvWnUu8q.","email":null,"role":"admin","status":"active","created_at":"2026-04-30 08:05:44","updated_at":"2026-04-30 08:05:44"},
+{"id":"11","username":"Murgiyanti","password":"39147fb6f825189fdb9ff1c72b5ee61a","email":null,"role":"admin","status":"active","created_at":"2026-04-30 08:05:44","updated_at":"2026-04-30 08:05:44"},
+{"id":"12","username":"adminkko","password":"$2y$12$yZWVgesw11SUD4gR26JDy.Ak4l7Fsq7tcxBXdK5ZSy83P9.JDpwrC","email":"admin@kkosemarang.local","role":"admin","status":"active","created_at":"2026-04-30 08:05:44","updated_at":"2026-04-30 08:05:44"},
+{"id":"14","username":"admin_kko","password":"4d276f47956520642ad46ee8862bd513","email":"admin@kko.com","role":"admin","status":"active","created_at":"2026-04-30 08:05:44","updated_at":"2026-04-30 08:05:44"}
+]
+}
+]

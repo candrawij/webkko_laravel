@@ -1,15 +1,12 @@
 <?php
 
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\PengurusController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [PengurusController::class, 'index'])->name('index');
 
-Route::get('/anggota', function () {
-    return view('anggota');
-});
+Route::get('/anggota', [PengurusController::class, 'anggota'])->name('anggota');
 
 Route::get('/kegiatan', function () {
     return view('kegiatan');

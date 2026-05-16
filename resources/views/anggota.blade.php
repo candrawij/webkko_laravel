@@ -20,20 +20,49 @@
 
   <!-- PENGURUS -->
   <section class="py-5 bg-light">
-    <div class="container">
-      <h2 class="text-center fw-bold mb-2">Pengurus KKO PAUD</h2>
-      <p class="text-center text-muted mb-5">
-        Tim kepemimpinan yang berpengalaman dan berdedikasi
-      </p>
-      <div class="row g-4">
+    <div class="container text-center">
+        <h2 class="fw-bold mb-2">Kepemimpinan KKO PAUD</h2>
+        <p class="text-muted mb-5">Tim kepemimpinan inti yang berpengalaman dan berdedikasi</p>
 
-          <div class="col-md-4">
-              <div class="card h-100 shadow-sm">
-              <img src="../assets/img/pengurus1.jpg" class="card-img-top" alt="Pengurus 1">
-              <div class="card-body text-center">
-                  <h5 class="card-title">
+        <div class="row g-4">
+            @forelse($semua_pengurus as $row)
+                <div class="col-md-4">
+                    <div class="p-4 h-100 shadow-sm rounded-4 bg-white border-0 card-hover">
+                        
+                        {{-- Logika Foto --}}
+                        <div class="text-center mb-3">
+                            @if($row->foto && file_exists(public_path('storage/pengurus/' . $row->foto)))
+                                <img src="{{ asset('storage/pengurus/' . $row->foto) }}" 
+                                     alt="{{ $row->nama }}" 
+                                     class="rounded-circle shadow-sm mb-2 mx-auto d-block"
+                                     style="width: 100px; height: 100px; object-fit: cover;">
+                            @else
+                                <div class="bg-danger rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" 
+                                     style="width: 100px; height: 100px;">
+                                    <i class="bi bi-person-fill text-white" style="font-size: 3rem;"></i>
+                                </div>
+                            @endif
+                        </div>
 
-      </div>
+                        <h5 class="fw-bold mb-1">{{ $row->nama }}</h5>
+                        <span class="badge bg-danger-subtle text-danger mb-3">{{ $row->jabatan }}</span>
+
+                        @if($row->pengalaman)
+                            <p class="mb-1 small text-start"><strong>Pengalaman:</strong> {{ $row->pengalaman }}</p>
+                        @endif
+                        
+                        @if($row->keahlian)
+                            <p class="mb-0 small text-start"><strong>Keahlian:</strong> {{ $row->keahlian }}</p>
+                        @endif
+                    </div>
+                </div>
+            @empty
+                <p class="text-muted">Data kepemimpinan belum tersedia.</p>
+            @endforelse
+        </div>
+        <div class="d-flex justify-content-center">
+            {{ $semua_pengurus->links() }}
+        </div>
     </div>
   </section>
 </x-layout>
