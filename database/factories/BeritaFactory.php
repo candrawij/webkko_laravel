@@ -26,7 +26,7 @@ class BeritaFactory extends Factory
             'slug' => Str::slug($judul), // Mengubah "Judul Berita" menjadi "judul-berita"
             'penulis' => $this->faker->name(),
             'konten' => $this->faker->paragraphs(5, true), // Membuat 5 paragraf teks
-            'gambar' => null, // Biarkan null dulu atau isi dengan nama file dummy
+            'foto' => null, // Biarkan null dulu atau isi dengan nama file dummy
             'kategori' => 'berita',
             'status' => 'published',
             'is_highlighted' => $this->faker->boolean(20), // Peluang 20% menjadi highlight (1)
