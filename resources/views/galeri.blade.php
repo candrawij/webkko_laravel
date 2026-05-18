@@ -40,7 +40,43 @@
             </form>
 
             <div class="row g-4">
-                
+                @forelse($resultGaleri as $row)
+                    @php
+                        // Pecah string nama-nama file foto menjadi array
+                        $fotoList = explode(',', $row->foto);
+                    @endphp
+
+                    @foreach($fotoList as $foto)
+                        @php
+                            $foto = trim($foto);
+                            // Gantikan getPhotoPath fisik dengan public_path Laravel
+                            $pathFisik = public_path('storage/galeri/' . $foto);
+                        @endphp
+
+                        {{-- Cek apakah nama foto tidak kosong dan filenya benar-benar ada di folder storage --}}
+                        @if(!empty($foto) && file_exists($pathFisik))
+                            <div class="col-md-4 col-sm-6">
+                                <div class="card h-100 shadow-sm border-0 rounded-4">
+                                    
+                                    <img src="{{ asset('storage/galeri/' . $foto) }}" 
+                                        class="card-img-top rounded-top-4" 
+                                        style="height: 200px; object-fit: cover;"
+                                        alt="Galeri {{ $row->judul }}">
+                                        
+                                    <div class="card-body text-center">
+                                        <h6 class="mb-0 fw-semibold">{{ $row->judul }}</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+                    @endforeach
+
+                @empty
+                    {{-- Tampilan jika tabel galeri benar-benar kosong atau hasil filter tidak ditemukan --}}
+                    <div class="col-12">
+                        <p class="text-center text-muted">Belum ada foto untuk kegiatan ini.</p>
+                    </div>
+                @endforelse
             </div>
         </div>
     </section>
