@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\KegiatanController;
@@ -19,9 +20,11 @@ Route::get('/berita', [BeritaController::class, 'index'])->name('berita');
 Route::get('/galeri', [GaleriController::class, 'index'])->name('galeri.index');
 Route::get('/galeri/{id}', [GaleriController::class, 'show'])->name('galeri.show');
 
-Route::get('/legalitas', function () {
-    return view('legalitas');
-});
+Route::get('/legalitas', [DocumentController::class, 'index'])->name('legalitas.index');
+
+Route::get('/download-legalitas/{nama_file}', [App\Http\Controllers\DocumentController::class, 'downloadLegalitas'])
+     ->middleware('auth') 
+     ->name('legalitas.download');
 
 Route::get('/kontak', function () {
     return view('kontak');
