@@ -6,16 +6,6 @@ use App\Models\Pengurus;
 
 class PengurusController extends Controller
 {
-    public function index()
-    {
-        // Mengambil data spesifik dengan urutan tertentu
-        $pimpinan = Pengurus::whereIn('jabatan', ['Pembina', 'Ketua Umum', 'Ketua Harian'])
-            ->orderByRaw("FIELD(jabatan, 'Pembina', 'Ketua Umum', 'Ketua Harian')")
-            ->get();
-
-        return view('index', compact('pimpinan'));
-    }
-
     public function anggota()
     {
         // Mengambil semua data pengurus tanpa filter jabatan tertentu

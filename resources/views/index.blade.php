@@ -272,16 +272,116 @@
             </div>
 
             <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm rounded-4 border-0">
-                        <img src="assets/img/kegiatan1.jpg" class="card-img-top" alt="Kegiatan 1">
-                        <div class="card-body">
-                            <h5 class="fw-bold mb
+                @forelse($kegiatan_terbaru as $row)
+                    @php
+                        // Pecah string koma foto kegiatan jika ada banyak foto
+                        $fotoList = explode(',', $row->foto ?? '');
+                        $fotoItem = isset($fotoList[0]) ? trim($fotoList[0]) : '';
+                        
+                        // Tentukan foto utama, jika kosong arahkan ke logo/default placeholder
+                        $fotoUtama = asset('images/logo.jpg'); 
+                        if (!empty($fotoItem) && file_exists(public_path('storage/kegiatan/' . $fotoItem))) {
+                            $fotoUtama = asset('storage/kegiatan/' . $fotoItem);
+                        }
+
+                        $tgl = date("d M Y", strtotime($row->tanggal));
+                        $jam = date("H:i", strtotime($row->jam));
+                        
+                        // Logika menentukan status kegiatan (Mendatang / Selesai)
+                        $isMendatang = strtotime($row->tanggal) >= time();
+                    @endphp
+
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm rounded-4 overflow-hidden">
+                            <div class="position-relative">
+                                <img src="{{ $fotoUtama }}" class="card-img-top" alt="{{ $row->nama_kegiatan }}">
+                                <span class="badge {{ $isMendatang ? 'bg-primary' : 'bg-success' }} position-absolute top-0 end-0 m-3">
+                                    {{ $isMendatang ? 'Mendatang' : 'Selesai' }}
+                                </span>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="fw-bold text-dark">{{ $row->nama_kegiatan }}</h5>
+                                <p class="mb-1 text-muted"><i class="bi bi-calendar-event me-1 text-danger"></i> {{ $tgl }}</p>
+                                <p class="mb-1 text-muted"><i class="bi bi-clock text-danger"></i> {{ $jam }} WIB</p>
+                                <p class="mb-1 text-muted"><i class="bi bi-geo-alt me-1 text-danger"></i> {{ $row->tempat }}</p>
+                                <p class="mb-3 text-muted">{{ Str::limit(strip_tags($row->deskripsi), 100, '...') }}</p>
+                                
+                                <a href="{{ route('kegiatan.show', $row->id) }}" class="text-danger fw-semibold text-decoration-none">
+                                    Lihat Detail <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                @empty
+                    <div class="col-12">
+                        <p class="text-center text-muted">Belum ada kegiatan saat ini.</p>
+                    </div>
+                @endforelse
             </div>
 
-            <!-- Tombol ke semua kegiatan -->
             <div class="text-center mt-4">
-                <a href="kegiatan.php" class="btn btn-outline-danger">Lihat Semua Kegiatan</a>
+                <a href="{{ route('kegiatan.index') }}" class="btn btn-outline-danger rounded-pill px-4">Lihat Semua Kegiatan</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="news" class="py-5 bg-light">
+        <style>
+            #news .card-img-top {
+                height: 200px;
+                object-fit: cover;
+            }
+        </style>
+
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Berita & Artikel</h2>
+                <p class="text-muted">Ikuti terus berita terbaru dan info menarik seputar komunitas kami</p>
+            </div>
+
+            <div class="row g-4">
+                @forelse($berita_terbaru as $berita)
+                    @php
+                        // Menentukan gambar berita, gunakan placeholder jika kolom kosong atau file tidak ada
+                        $gambarBerita = asset('images/logo.jpg');
+                        if (!empty($berita->gambar) && file_exists(public_path('storage/berita/' . $berita->gambar))) {
+                            $gambarBerita = asset('storage/berita/' . $berita->gambar);
+                        }
+                    @endphp
+
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm rounded-4 overflow-hidden border-0">
+                            <img src="{{ $gambarBerita }}" class="card-img-top" alt="{{ $berita->judul }}">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mb-2">
+                                    <small class="text-muted">
+                                        <i class="bi bi-clock me-1 text-danger"></i> 
+                                        {{ $berita->created_at ? $berita->created_at->diffForHumans() : 'Baru saja' }}
+                                    </small>
+                                </div>
+                                <h5 class="fw-bold text-dark text-truncate-2" style="height: 48px; overflow: hidden;">
+                                    {{ $berita->judul }}
+                                </h5>
+                                <p class="text-muted small flex-grow-1">
+                                    {{ Str::limit(strip_tags($berita->isi), 100, '...') }}
+                                </p>
+                                
+                                {{-- Sesuaikan nama route detail berita jika nanti kamu sudah membuat BeritaController --}}
+                                <a href="#" class="text-danger fw-semibold text-decoration-none mt-2">
+                                    Baca Selengkapnya <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                @empty
+                    <div class="col-12">
+                        <p class="text-center text-muted">Belum ada berita yang diterbitkan.</p>
+                    </div>
+                @endforelse
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="{{ route('berita') }}" class="btn btn-outline-danger rounded-pill px-4">Lihat Semua Berita</a>
             </div>
         </div>
     </section>
