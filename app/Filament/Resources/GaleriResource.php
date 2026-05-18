@@ -49,6 +49,11 @@ class GaleriResource extends Resource
                 TextColumn::make('tanggal')->date('d M Y')->sortable(),
                 ImageColumn::make('foto'), // Menampilkan thumbnail foto di tabel admin
             ])
+
+            ->actions([
+                Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
+            ])
             
             ->bulkActions([
                 BulkActionGroup::make([

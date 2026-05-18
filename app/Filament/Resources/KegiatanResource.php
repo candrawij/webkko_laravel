@@ -52,6 +52,17 @@ class KegiatanResource extends Resource
                 TextColumn::make('tanggal')->date('d M Y')->sortable(),
                 TextColumn::make('tempat'),
                 ImageColumn::make('foto'), // Menampilkan thumbnail foto di tabel admin
+            ])
+            
+            ->actions([
+                Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
+            ])
+            
+            ->bulkActions([
+                Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\DeleteBulkAction::make(),
+                ]),
             ]);
     }
 

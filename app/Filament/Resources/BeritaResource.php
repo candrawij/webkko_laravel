@@ -5,7 +5,6 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\BeritaResource\Pages;
 use App\Models\Berita;
 use Filament\Forms;
-use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
@@ -66,6 +65,15 @@ class BeritaResource extends Resource
                 ->options([
                     'draft' => 'Draft',
                     'published' => 'Published',
+                ])
+            ])
+            ->actions([
+                Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
+            ])
+            ->bulkActions([
+                Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ]);
     }
