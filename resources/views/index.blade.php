@@ -1,5 +1,5 @@
 <x-layout>
-    <section id="hero" class="text-center position-relative overflow-hidden">
+    <section id="hero-index" class="text-center position-relative overflow-hidden">
         <!-- Carousel Background -->
         <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000">
             <div class="carousel-inner">
