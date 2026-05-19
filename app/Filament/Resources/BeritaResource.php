@@ -26,6 +26,14 @@ class BeritaResource extends Resource
 
     protected static ?string $navigationLabel = 'Berita';
 
+    protected static ?int $navigationSort = 3;
+
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
+    protected static ?string $navigationBadgeTooltip = 'Jumlah Berita';
+
     public static function form(Form $form): Form
     {
         return $form

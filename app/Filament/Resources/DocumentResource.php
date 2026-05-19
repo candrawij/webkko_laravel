@@ -23,6 +23,14 @@ class DocumentResource extends Resource
 
     protected static ?string $navigationLabel = 'Dokumen';
 
+    protected static ?int $navigationSort = 5;
+
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
+    protected static ?string $navigationBadgeTooltip = 'Jumlah Dokumen';
+
     public static function form(Form $form): Form
     {
         return $form

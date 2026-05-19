@@ -28,6 +28,14 @@ class KegiatanResource extends Resource
 
     protected static ?string $navigationLabel = 'Kegiatan';
 
+    protected static ?int $navigationSort = 3;
+
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
+    protected static ?string $navigationBadgeTooltip = 'Jumlah Kegiatan';
+
     public static function form(Form $form): Form
     {
         return $form

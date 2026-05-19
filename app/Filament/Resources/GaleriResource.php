@@ -28,6 +28,14 @@ class GaleriResource extends Resource
 
     protected static ?string $navigationLabel = 'Galeri';
 
+    protected static ?int $navigationSort = 4;
+
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
+    protected static ?string $navigationBadgeTooltip = 'Jumlah Galeri';
+
     public static function form(Form $form): Form
     {
         return $form
