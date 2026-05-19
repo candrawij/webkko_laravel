@@ -22,9 +22,15 @@
                 <x-nav-link href="/legalitas" :active="request()->is('legalitas')">Legalitas</x-nav-link>
                 <x-nav-link href="/kontak" :active="request()->is('kontak')">Kontak</x-nav-link>
 
-                <a class="btn btn-danger px-3 ms-lg-2 mt-1 mt-lg-0 fw-semibold shadow-sm w-100 w-lg-auto" href="/login" target="blank">
-                    Login
-                </a>
+                @if(auth()->check())
+                    <a href="{{ route('filament.admin.pages.dashboard') }}" class="btn btn-success rounded-pill px-4">
+                        Ke Dashboard Admin
+                    </a>
+                @else
+                    <a href="{{ route('filament.admin.auth.login') }}" class="btn btn-outline-danger rounded-pill px-4">
+                        Login Pengurus
+                    </a>
+                @endif
             </div>
         </div>
 

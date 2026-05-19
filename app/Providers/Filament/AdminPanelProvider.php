@@ -27,6 +27,9 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
+            ->homeUrl('/')
+            ->brandName('Admin KKO')
+            
             ->colors([
                 'primary' => Color::Amber,
             ])
@@ -53,6 +56,8 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
-            ]);
+            ])
+            
+            ->topNavigation();
     }
 }
