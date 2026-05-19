@@ -26,7 +26,7 @@ class BeritaResource extends Resource
 
     protected static ?string $navigationLabel = 'Berita';
 
-    protected static ?int $navigationSort = 3;
+    protected static ?int $navigationSort = 5;
 
     public static function getNavigationBadge(): ?string
     {
