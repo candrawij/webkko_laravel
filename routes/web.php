@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [IndexController::class, 'index'])->name('index');
 
 Route::get('/anggota', [PengurusController::class, 'anggota'])->name('anggota');
+Route::get('/gambar-pengurus/{nama_file}', [PengurusController::class, 'showFotoPengurus'])->name('pengurus.foto');
 
 Route::get('/kegiatan', [KegiatanController::class, 'index'])->name('kegiatan.index');
 Route::get('/kegiatan/{id}', [KegiatanController::class, 'show'])->name('kegiatan.show');
@@ -22,7 +23,7 @@ Route::get('/galeri/{id}', [GaleriController::class, 'show'])->name('galeri.show
 
 Route::get('/legalitas', [DocumentController::class, 'index'])->name('legalitas.index');
 
-Route::get('/download-legalitas/{nama_file}', [App\Http\Controllers\DocumentController::class, 'downloadLegalitas'])
+Route::get('/download-legalitas/{nama_file}', [DocumentController::class, 'downloadLegalitas'])
      ->middleware('auth') 
      ->name('legalitas.download');
 

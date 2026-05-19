@@ -35,6 +35,7 @@ class PengurusResource extends Resource
 
                 FileUpload::make('foto')
                     ->directory('pengurus')
+                    ->disk('local')
                     ->image() 
                     ->nullable(),
             ]);
@@ -47,7 +48,18 @@ class PengurusResource extends Resource
                 TextColumn::make('nama')->searchable()->sortable(),
                 TextColumn::make('jabatan')->searchable()->sortable(),
                 TextColumn::make('pendidikan_terakhir')->searchable()->sortable(),
-                ImageColumn::make('foto'), // Menampilkan thumbnail foto di tabel admin
+
+                ImageColumn::make('foto')
+                    ->label('Foto Pengurus')
+                    ->state(function ($record) {
+                        if (!$record->foto) {
+                            return null;
+                        }
+                        // Mengembalikan URL penuh dari rute jembatan yang ada di Controller
+                        return route('pengurus.foto', ['nama_file' => $record->foto]);
+                    })
+                    // Matikan deteksi disk bawaan agar Filament tidak otomatis menambahkan teks '/storage/' di depannya
+                    ->disk(null),
             ])
             ->filters([
                 //

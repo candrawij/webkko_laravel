@@ -29,16 +29,19 @@
                 <div class="col-md-4">
                     <div class="p-4 h-100 shadow-sm rounded-4 bg-white border-0 card-hover">
                         
-                        {{-- Logika Foto --}}
+                        {{-- Logika Foto Terproteksi --}}
                         <div class="text-center mb-3">
-                            @if($row->foto && file_exists(public_path('storage/pengurus/' . $row->foto)))
-                                <img src="{{ asset('storage/pengurus/' . $row->foto) }}" 
-                                     alt="{{ $row->nama }}" 
-                                     class="rounded-circle shadow-sm mb-2 mx-auto d-block"
-                                     style="width: 100px; height: 100px; object-fit: cover;">
+                            {{-- 1. Gunakan Storage::disk('local') untuk mengecek folder privat storage/app/pengurus --}}
+                            @if($row->foto && \Illuminate\Support\Facades\Storage::disk('local')->exists('pengurus/' . $row->foto))
+                                {{-- 2. Tembak ke route jembatan pengurus.foto, bukan asset() publik --}}
+                                <img src="{{ route('pengurus.foto', ['nama_file' => $row->foto]) }}" 
+                                    alt="{{ $row->nama }}" 
+                                    class="rounded-circle shadow-sm mb-2 mx-auto d-block"
+                                    style="width: 100px; height: 100px; object-fit: cover;">
                             @else
+                                {{-- Avatar bawaan jika data foto kosong atau file fisik terhapus --}}
                                 <div class="bg-danger rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" 
-                                     style="width: 100px; height: 100px;">
+                                    style="width: 100px; height: 100px;">
                                     <i class="bi bi-person-fill text-white" style="font-size: 3rem;"></i>
                                 </div>
                             @endif
