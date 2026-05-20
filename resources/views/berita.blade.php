@@ -60,7 +60,7 @@
 
                 {{-- Link Navigasi Halaman --}}
                 <div class="d-flex justify-content-center">
-                    {{ $berita_list->links() }}
+                    {{ $berita_list->links('vendor.pagination.bootstrap-5') }}
                 </div>
             </div>
 

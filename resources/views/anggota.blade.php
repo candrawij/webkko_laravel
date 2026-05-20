@@ -64,7 +64,7 @@
             @endforelse
         </div>
         <div class="d-flex justify-content-center">
-            {{ $semua_pengurus->links() }}
+            {{ $semua_pengurus->links('vendor.pagination.bootstrap-5') }}
         </div>
     </div>
   </section>
