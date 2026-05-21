@@ -21,6 +21,7 @@ Route::get('/berita', [BeritaController::class, 'index'])->name('berita');
 
 Route::get('/galeri', [GaleriController::class, 'index'])->name('galeri.index');
 Route::get('/galeri/{id}', [GaleriController::class, 'show'])->name('galeri.show');
+Route::get('/gambar-galeri/{nama_file}', [GaleriController::class, 'showFotoGaleri'])->name('galeri.foto');
 
 Route::get('/legalitas', [DocumentController::class, 'index'])->name('legalitas.index');
 
