@@ -15,6 +15,7 @@ Route::get('/gambar-pengurus/{nama_file}', [PengurusController::class, 'showFoto
 
 Route::get('/kegiatan', [KegiatanController::class, 'index'])->name('kegiatan.index');
 Route::get('/kegiatan/{id}', [KegiatanController::class, 'show'])->name('kegiatan.show');
+Route::get('/gambar-kegiatan/{nama_file}', [KegiatanController::class, 'showFotoKegiatan'])->name('kegiatan.foto');
 
 Route::get('/berita', [BeritaController::class, 'index'])->name('berita');
 

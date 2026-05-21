@@ -21,19 +21,36 @@
               <div class="col-md-4">
                   <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
                       
-                      {{-- Menampilkan Foto Utama Kegiatan --}}
-                      @if(!empty($kegiatan->foto))
-                          <img src="{{ asset('storage/kegiatan/' . $kegiatan->foto) }}" 
-                              class="card-img-top" 
-                              style="height: 220px; object-fit: cover;" 
-                              alt="{{ $kegiatan->nama_kegiatan }}">
-                      @else
-                          {{-- Gambar placeholder jika kegiatan tidak memiliki foto --}}
-                          <img src="{{ asset('images/default-kegiatan.jpg') }}" 
-                              class="card-img-top" 
-                              style="height: 220px; object-fit: cover;" 
-                              alt="Default Kegiatan">
-                      @endif
+                     {{-- Menampilkan Foto Utama Kegiatan --}}
+                        @if($kegiatan->foto)
+                            @php
+                                // 1. Gunting dulu datanya SEBELUM melakukan pengecekan
+                                $array_foto = explode(',', $kegiatan->foto);
+                                $foto_sampul = basename(trim($array_foto[0]));
+                                
+                                // 2. Buat alamat fisik file di folder public/kegiatan/ (folder luar)
+                                $lokasi_fisik = public_path('storage/kegiatan/' . $foto_sampul);
+                            @endphp
+
+                            {{-- 3. Baru kita cek, apakah file potongan pertama tadi beneran ada di laptop? --}}
+                            @if(file_exists($lokasi_fisik))
+                                <img src="{{ route('kegiatan.foto', ['nama_file' => $foto_sampul]) }}" 
+                                    class="card-img-top" 
+                                    alt="{{ $kegiatan->nama_kegiatan }}"
+                                    style="height: 200px; object-fit: cover;">
+                            @else
+                                {{-- Jika di database ada namanya, tapi file fotonya terhapus/hilang dari folder --}}
+                                <div class="bg-secondary-subtle d-flex align-items-center justify-content-center" style="height: 200px;">
+                                    <i class="bi bi-image text-muted" style="font-size: 3rem;"></i>
+                                </div>
+                            @endif
+                            
+                        @else
+                            {{-- Jika di database memang kolom fotonya kosong/NULL --}}
+                            <div class="bg-secondary-subtle d-flex align-items-center justify-content-center" style="height: 200px;">
+                                <i class="bi bi-image text-muted" style="font-size: 3rem;"></i>
+                            </div>
+                        @endif
 
                       <div class="card-body d-flex flex-column">
                           <div class="text-muted small mb-2">

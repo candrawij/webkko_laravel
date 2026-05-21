@@ -27,4 +27,21 @@ class KegiatanController extends Controller
 
         return view('kegiatan-detail', compact('kegiatan'));
     }
+
+    public function showFotoKegiatan($nama_file)
+    {
+
+        // Karena aset ditaruh di folder public/kegiatan/ luar:
+        // Karena aset ditaruh di folder public/storage/kegiatan/
+        $absolutePath = public_path('storage/kegiatan' . DIRECTORY_SEPARATOR . $nama_file);
+
+        // Cek apakah file benar-benar ada di folder public/kegiatan/
+        // Cek apakah file benar-benar ada di folder public/storage/kegiatan/
+        if (!file_exists($absolutePath)) {
+            abort(404, 'File gambar kegiatan tidak ditemukan.');
+        }
+
+        // Kembalikan respons file gambar utuh ke browser
+        return response()->file($absolutePath);
+    }
 }
