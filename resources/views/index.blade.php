@@ -274,39 +274,54 @@
             <div class="row g-4">
                 @forelse($kegiatan_terbaru as $row)
                     @php
-                        // Pecah string koma foto kegiatan jika ada banyak foto
-                        $fotoList = explode(',', $row->foto ?? '');
-                        $fotoItem = isset($fotoList[0]) ? trim($fotoList[0]) : '';
+                        // 1. Pecah string koma dari database menjadi list array foto
+                        $fotoList = $row->foto ? array_filter(explode(',', $row->foto)) : [];
                         
-                        // Tentukan foto utama, jika kosong arahkan ke logo/default placeholder
-                        $fotoUtama = asset('images/logo.jpg'); 
-                        if (!empty($fotoItem) && file_exists(public_path('storage/kegiatan/' . $fotoItem))) {
-                            $fotoUtama = asset('storage/kegiatan/' . $fotoItem);
+                        // 2. Tentukan foto default (placeholder)
+                        $fotoUtama = asset('assets/img/logo.jpg'); 
+                        
+                        // 3. Cari foto pertama yang beneran eksis secara fisik di folder storage/kegiatan
+                        foreach ($fotoList as $fotoItem) {
+                            $nama_file = basename(trim($fotoItem));
+                            if (!empty($nama_file) && file_exists(public_path('storage/kegiatan/' . $nama_file))) {
+                                // REVISI: Gunakan route jembatan kustom kita agar seragam
+                                $fotoUtama = route('kegiatan.foto', ['nama_file' => $nama_file]);
+                                break; 
+                            }
                         }
 
+                        // Format data teks pendukung
                         $tgl = date("d M Y", strtotime($row->tanggal));
-                        $jam = date("H:i", strtotime($row->jam));
                         
-                        // Logika menentukan status kegiatan (Mendatang / Selesai)
+                        // REVISI AMAN: antisipasi jika kolom di database bernama 'jam' atau 'waktu'
+                        $jam = date("H:i", strtotime($row->jam ?? $row->waktu ?? '00:00'));
+                        
+                        // Logika status tenggat waktu kegiatan
                         $isMendatang = strtotime($row->tanggal) >= time();
                     @endphp
 
                     <div class="col-md-4">
-                        <div class="card h-100 shadow-sm rounded-4 overflow-hidden">
+                        <div class="card h-100 shadow-sm rounded-4 overflow-hidden border-0">
                             <div class="position-relative">
-                                <img src="{{ $fotoUtama }}" class="card-img-top" alt="{{ $row->nama_kegiatan }}">
+                                <img src="{{ $fotoUtama }}" class="card-img-top" alt="{{ $row->nama_kegiatan }}" style="height: 200px; object-fit: cover;">
+                                
                                 <span class="badge {{ $isMendatang ? 'bg-primary' : 'bg-success' }} position-absolute top-0 end-0 m-3">
                                     {{ $isMendatang ? 'Mendatang' : 'Selesai' }}
                                 </span>
                             </div>
-                            <div class="card-body">
+                            
+                            <div class="card-body d-flex flex-column">
                                 <h5 class="fw-bold text-dark">{{ $row->nama_kegiatan }}</h5>
-                                <p class="mb-1 text-muted"><i class="bi bi-calendar-event me-1 text-danger"></i> {{ $tgl }}</p>
-                                <p class="mb-1 text-muted"><i class="bi bi-clock text-danger"></i> {{ $jam }} WIB</p>
-                                <p class="mb-1 text-muted"><i class="bi bi-geo-alt me-1 text-danger"></i> {{ $row->tempat }}</p>
-                                <p class="mb-3 text-muted">{{ Str::limit(strip_tags($row->deskripsi), 100, '...') }}</p>
                                 
-                                <a href="{{ route('kegiatan.show', $row->id) }}" class="text-danger fw-semibold text-decoration-none">
+                                <p class="mb-1 text-muted small"><i class="bi bi-calendar-event me-1 text-danger"></i> {{ $tgl }}</p>
+                                <p class="mb-1 text-muted small"><i class="bi bi-clock me-1 text-danger"></i> {{ $jam }} WIB</p>
+                                
+                                {{-- REVISI AMAN: antisipasi jika kolom database bernama 'tempat' atau 'lokasi' --}}
+                                <p class="mb-1 text-muted small"><i class="bi bi-geo-alt me-1 text-danger"></i> {{ $row->tempat ?? $row->lokasi }}</p>
+                                
+                                <p class="mb-3 text-muted small flex-grow-1 mt-2">{{ Str::limit(strip_tags($row->deskripsi), 100, '...') }}</p>
+                                
+                                <a href="{{ route('kegiatan.show', $row->id) }}" class="text-danger fw-semibold text-decoration-none mt-auto">
                                     Lihat Detail <i class="bi bi-arrow-right"></i>
                                 </a>
                             </div>
@@ -314,12 +329,12 @@
                     </div>
                 @empty
                     <div class="col-12">
-                        <p class="text-center text-muted">Belum ada kegiatan saat ini.</p>
+                        <p class="text-center text-muted py-4">Belum ada kegiatan saat ini.</p>
                     </div>
                 @endforelse
             </div>
 
-            <div class="text-center mt-4">
+            <div class="text-center mt-5">
                 <a href="{{ route('kegiatan.index') }}" class="btn btn-outline-danger rounded-pill px-4">Lihat Semua Kegiatan</a>
             </div>
         </div>
