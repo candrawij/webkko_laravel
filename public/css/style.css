@@ -5,7 +5,7 @@ body {
         /* Background lembut */
         #hero-index {
             position: relative;
-            height: 100vh;
+            height: 90vh;
             /* full tinggi layar */
             margin: 0;
             padding: 0;
@@ -105,10 +105,6 @@ body {
 
         .text-shadow {
             text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9);
-        }
-
-        #hero {
-            height: 90vh;
         }
 
         .sambutan-wrapper {
