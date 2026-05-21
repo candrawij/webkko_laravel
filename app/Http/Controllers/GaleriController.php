@@ -31,4 +31,16 @@ class GaleriController extends Controller
         
         return view('galeri-detail', compact('galeri'));
     }
+
+    public function showFotoGaleri($nama_file)
+    {
+        // Ini sudah sangat tepat untuk membaca C:\laragon\www\web_kko\public\storage\kegiatan\nama_file.jpg
+        $absolutePath = public_path('storage/galeri' . DIRECTORY_SEPARATOR . $nama_file);
+
+        if (!file_exists($absolutePath)) {
+            abort(404, 'File gambar galeri tidak ditemukan.');
+        }
+
+        return response()->file($absolutePath);
+    }
 }

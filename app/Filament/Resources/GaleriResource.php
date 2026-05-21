@@ -57,7 +57,22 @@ class GaleriResource extends Resource
             ->columns([
                 TextColumn::make('judul')->searchable()->sortable(),
                 TextColumn::make('tanggal')->date('d M Y')->sortable(),
-                ImageColumn::make('foto'), // Menampilkan thumbnail foto di tabel admin
+                ImageColumn::make('foto')
+                ->state(function ($record) {
+                        if (!$record->foto) {
+                            return null;
+                        }
+
+                        // 1. Pecah string database berdasarkan tanda koma
+                        $semua_foto = explode(',', $record->foto);
+                        
+                        // 2. Ambil foto yang paling pertama [0] dan bersihkan jalurnya
+                        $foto_pertama = basename(trim($semua_foto[0]));
+                        
+                        // 3. Masukkan ke rute jembatan
+                        return route('galeri.foto', ['nama_file' => $foto_pertama]);
+                    })
+                    ->disk(null), // Menampilkan thumbnail foto di tabel admin
             ])
 
             ->actions([

@@ -42,15 +42,18 @@ class KegiatanResource extends Resource
             ->schema([
                 TextInput::make('nama_kegiatan')->required(),
                 DatePicker::make('tanggal')->required(),
-                TimePicker::make('jam')->required(),
-                TextInput::make('tempat')->required(),
-                Textarea::make('deskripsi')->required()->columnSpanFull(),
+                TimePicker::make('waktu')->required(),
+                TextInput::make('lokasi')->required(),
+                Textarea::make('deskripsi')->columnSpanFull(),
                 
                 // Otomatis handle upload ke folder public/storage/kegiatan
                 FileUpload::make('foto')
                     ->directory('kegiatan')
+                    ->disk('public')
                     ->image() 
                     ->nullable(),
+
+                TextInput::make('materi'),
                 ]);
     }
 
@@ -60,8 +63,28 @@ class KegiatanResource extends Resource
             ->columns([
                 TextColumn::make('nama_kegiatan')->searchable()->sortable(),
                 TextColumn::make('tanggal')->date('d M Y')->sortable(),
-                TextColumn::make('tempat'),
-                ImageColumn::make('foto'), // Menampilkan thumbnail foto di tabel admin
+                TextColumn::make('lokasi')->searchable()->sortable(),
+                TextColumn::make('deskripsi')->searchable()->limit(50),
+
+                ImageColumn::make('foto')
+                    ->state(function ($record) {
+                        if (!$record->foto) {
+                            return null;
+                        }
+
+                        // 1. Pecah string database berdasarkan tanda koma
+                        $semua_foto = explode(',', $record->foto);
+                        
+                        // 2. Ambil foto yang paling pertama [0] dan bersihkan jalurnya
+                        $foto_pertama = basename(trim($semua_foto[0]));
+                        
+                        // 3. Masukkan ke rute jembatan
+                        return route('kegiatan.foto', ['nama_file' => $foto_pertama]);
+                    })
+                    ->disk(null)
+                    ->square(),
+
+                TextColumn::make('materi')->searchable()->limit(50), // Menampilkan sebagian materi di tabel
             ])
             
             ->actions([
