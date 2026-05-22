@@ -53,7 +53,7 @@
                 {{-- Login / Dashboard --}}
                 @if(auth()->check())
                     <x-nav-link href="{{ route('filament.admin.pages.dashboard') }}" target="_blank" class="fw-bold text-danger">
-                        Dashboard Admin
+                        Login
                     </x-nav-link>
                 @else
                     <x-nav-link href="{{ route('login') }}" target="_blank">

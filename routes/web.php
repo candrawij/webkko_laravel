@@ -51,3 +51,16 @@ use App\Http\Controllers\AuthController;
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'authenticate'])->name('login.post');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+use App\Http\Controllers\AdminPengurusController;
+Route::post('/admin-pengurus-action', [AdminPengurusController::class, 'action'])->name('admin.pengurus.action');
+
+use App\Http\Controllers\AdminPendaftarController;
+Route::match(['get', 'post'], '/admin-pendaftar-action', [AdminPendaftarController::class, 'action'])->name('admin.pendaftar.action');
+
+use App\Http\Controllers\AdminKegiatanController;
+Route::match(['get', 'post'], '/admin-kegiatan-action', [AdminKegiatanController::class, 'action'])->name('admin.kegiatan.action');
+
+use App\Http\Controllers\AdminEventController;
+Route::post('/admin-event-action', [AdminEventController::class, 'action'])->name('admin.event.action');
+Route::get('/generate-qr', [AdminEventController::class, 'generateQr'])->name('generate.qr');

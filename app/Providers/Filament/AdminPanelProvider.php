@@ -27,7 +27,7 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->homeUrl('/')
-            ->brandName('Admin KKO')
+            ->brandName('Admin')
             
             ->colors([
                 'primary' => Color::Amber,
@@ -35,7 +35,7 @@ class AdminPanelProvider extends PanelProvider
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
-                Pages\Dashboard::class,
+                \App\Filament\Pages\Dashboard::class,
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
@@ -56,7 +56,14 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
-            
-            ->topNavigation();
+            ->topNavigation()
+            ->renderHook(
+                \Filament\View\PanelsRenderHook::HEAD_END,
+                fn (): string => '<style>
+                    /* Memberi jarak antara tulisan Admin dan menu navigasi */
+                    .fi-topbar nav { margin-left: 3rem !important; }
+                    .fi-logo { margin-right: 2rem !important; }
+                </style>'
+            );
     }
 }
