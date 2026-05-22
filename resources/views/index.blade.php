@@ -1,40 +1,32 @@
 <x-layout>
-    <section id="hero-index" class="text-center position-relative overflow-hidden">
-        <!-- Carousel Background -->
-        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="assets/img/gambarkontak.jpg" class="d-block w-100" style="height:100vh; object-fit:cover;"
+
+    <section class="position-relative overflow-hidden" style="height: 90vh;">
+        <div id="heroCarousel" class="carousel slide carousel-fade h-100" data-bs-ride="carousel" data-bs-interval="4000">
+            <div class="carousel-inner h-100">
+                <div class="carousel-item active h-100">
+                    <img src="{{ asset('assets/img/gambarkontak.jpg') }}" class="d-block w-100 h-100" style="object-fit:cover;"
                         alt="slide1">
                 </div>
-                <div class="carousel-item">
-                    <img src="assets/img/g2.jpg" class="d-block w-100" style="height:100vh; object-fit:cover;"
+                <div class="carousel-item h-100">
+                    <img src="{{ asset('assets/img/g2.jpg') }}" class="d-block w-100 h-100" style="object-fit:cover;"
                         alt="slide2">
                 </div>
-                <div class="carousel-item">
-                    <img src="assets/img/g3.jpg" class="d-block w-100" style="height:100vh; object-fit:cover;"
+                <div class="carousel-item h-100">
+                    <img src="{{ asset('assets/img/g3.jpg') }}" class="d-block w-100 h-100" style="object-fit:cover;"
                         alt="slide3">
                 </div>
-                <div class="carousel-item">
-                    <img src="assets/img/g4.jpg" class="d-block w-100" style="height:100vh; object-fit:cover;"
+                <div class="carousel-item h-100">
+                    <img src="{{ asset('assets/img/g4.jpg') }}" class="d-block w-100 h-100" style="object-fit:cover;"
                         alt="slide4">
                 </div>
-            </div>
-
-            <!-- Indicator bulatan -->
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
             </div>
         </div>
 
         <!-- Overlay konten -->
         <div class="container position-absolute top-50 start-50 translate-middle text-white text-center animate__animated animate__fadeInUp"
-            style="z-index:2;">
+            style="z-index:2; width: 100%;">
             <span class="tagline bg-danger-subtle text-danger px-3 py-1 rounded-pill">Komunitas PAUD</span>
-            <h1 class="hero-title display-4 fw-bold text-shadow mb-1"
+            <h1 class="hero-title display-4 fw-bold text-shadow mb-1 mt-3"
                 style="color:#fff; text-shadow: 3px 3px 12px rgba(0,0,0,0.9);">
                 KKO PAUD
             </h1>
@@ -48,8 +40,8 @@
                 melalui pelatihan, digitalisasi, dan kegiatan sosial.
             </p>
             <div class="mt-4">
-                <a href="anggota.php" class="btn btn-danger btn-lg me-2 shadow">Bergabung Sekarang</a>
-                <a href="kegiatan.php" class="btn btn-outline-light btn-lg shadow">Lihat Kegiatan</a>
+                <a href="{{ route('anggota') }}" class="btn btn-danger btn-lg me-2 shadow">Bergabung Sekarang</a>
+                <a href="{{ route('kegiatan.index') }}" class="btn btn-outline-light btn-lg shadow">Lihat Kegiatan</a>
             </div>
         </div>
 
@@ -63,7 +55,7 @@
             <h2 class="fw-bold text-center text-danger mb-4">Ketua Umum</h2>
             <div class="row align-items-start">
                 <div class="col-md-3 text-center mb-3 mb-md-0">
-                    <img src="assets\img\ketuakko_viveno.jpg" alt="Viveno Susilo" class="img-fluid rounded-4 shadow-sm">
+                    <img src="{{ asset('assets/img/ketuakko_viveno.jpg') }}" alt="Viveno Susilo" class="img-fluid rounded-4 shadow-sm">
                     <h5 class="fw-bold mt-3 mb-0">Viveno Susilo</h5>
                     <small class="text-muted">Ketua Umum KKO PAUD Kota Semarang</small>
                 </div>
@@ -225,8 +217,8 @@
                             
                             {{-- Logika Foto --}}
                             <div class="text-center mb-3">
-                                @if($row->foto && file_exists(public_path('storage/pengurus/' . $row->foto)))
-                                    <img src="{{ asset('storage/pengurus/' . $row->foto) }}" 
+                                @if($row->foto && file_exists(public_path('assets/foto_pengurus/' . $row->foto)))
+                                    <img src="{{ asset('assets/foto_pengurus/' . $row->foto) }}" 
                                         alt="{{ $row->nama }}" 
                                         class="rounded-circle shadow-sm mb-2 mx-auto d-block"
                                         style="width: 100px; height: 100px; object-fit: cover;">
@@ -280,12 +272,11 @@
                         // 2. Tentukan foto default (placeholder)
                         $fotoUtama = asset('assets/img/logo.jpg'); 
                         
-                        // 3. Cari foto pertama yang beneran eksis secara fisik di folder storage/kegiatan
+                        // 3. Cari foto pertama yang beneran eksis secara fisik di folder assets/foto_kegiatan
                         foreach ($fotoList as $fotoItem) {
                             $nama_file = basename(trim($fotoItem));
-                            if (!empty($nama_file) && file_exists(public_path('storage/kegiatan/' . $nama_file))) {
-                                // REVISI: Gunakan route jembatan kustom kita agar seragam
-                                $fotoUtama = route('kegiatan.foto', ['nama_file' => $nama_file]);
+                            if (!empty($nama_file) && file_exists(public_path('assets/foto_kegiatan/' . $nama_file))) {
+                                $fotoUtama = asset('assets/foto_kegiatan/' . $nama_file);
                                 break; 
                             }
                         }
@@ -340,136 +331,53 @@
         </div>
     </section>
 
-    <section id="news" class="py-5 bg-light">
-        <style>
-            #news .card-img-top {
-                height: 200px;
-                object-fit: cover;
-            }
-        </style>
-
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold">Berita & Artikel</h2>
-                <p class="text-muted">Ikuti terus berita terbaru dan info menarik seputar komunitas kami</p>
-            </div>
-
-            <div class="row g-4">
-                @forelse($berita_terbaru as $berita)
-                    @php
-                        // Menentukan gambar berita, gunakan placeholder jika kolom kosong atau file tidak ada
-                        $gambarBerita = asset('images/logo.jpg');
-                        if (!empty($berita->gambar) && file_exists(public_path('storage/berita/' . $berita->gambar))) {
-                            $gambarBerita = asset('storage/berita/' . $berita->gambar);
-                        }
-                    @endphp
-
-                    <div class="col-md-4">
-                        <div class="card h-100 shadow-sm rounded-4 overflow-hidden border-0">
-                            <img src="{{ $gambarBerita }}" class="card-img-top" alt="{{ $berita->judul }}">
-                            <div class="card-body d-flex flex-column">
-                                <div class="mb-2">
-                                    <small class="text-muted">
-                                        <i class="bi bi-clock me-1 text-danger"></i> 
-                                        {{ $berita->created_at ? $berita->created_at->diffForHumans() : 'Baru saja' }}
-                                    </small>
-                                </div>
-                                <h5 class="fw-bold text-dark text-truncate-2" style="height: 48px; overflow: hidden;">
-                                    {{ $berita->judul }}
-                                </h5>
-                                <p class="text-muted small flex-grow-1">
-                                    {{ Str::limit(strip_tags($berita->isi), 100, '...') }}
-                                </p>
-                                
-                                {{-- Sesuaikan nama route detail berita jika nanti kamu sudah membuat BeritaController --}}
-                                <a href="#" class="text-danger fw-semibold text-decoration-none mt-2">
-                                    Baca Selengkapnya <i class="bi bi-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                @empty
-                    <div class="col-12">
-                        <p class="text-center text-muted">Belum ada berita yang diterbitkan.</p>
-                    </div>
-                @endforelse
-            </div>
-
-            <div class="text-center mt-4">
-                <a href="{{ route('berita') }}" class="btn btn-outline-danger rounded-pill px-4">Lihat Semua Berita</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="mars_kko" class="py-5 bg-light">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-5 text-center mb-4 mb-md-0">
-                    <div class="position-relative d-inline-block">
-                        <div class="p-5 bg-danger bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center" 
-                            style="width: 300px; height: 300px;">
-                            <i class="bi bi-music-note-beamed text-danger" style="font-size: 120px;"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <h2 class="fw-bold mb-3">Mars KKO PAUD Kota Semarang</h2>
-                    <p class="text-muted mb-4">
-                        Dengarkan lagu kebanggaan KKO PAUD Kota Semarang. Mars ini adalah simbol persatuan dan 
-                        semangat kolaborasi para operator PAUD dalam meningkatkan mutu pendidikan anak usia dini.
-                    </p>
-                    
-                    <!-- AUDIO PLAYER -->
-                    <div class="bg-white p-4 rounded-4 shadow-sm mb-4">
-                        <audio controls class="w-100" style="max-width: 100%; height: 50px;">
-                            <source src="serve.php?type=mars_kko&file=mars_kkopaudkotasemarang.mp3" type="audio/mpeg">
-                            Browser Anda tidak mendukung pemutar audio HTML5.
-                        </audio>
-                    </div>
-                    
-                    <!--<p class="small text-muted">
-                        <i class="bi bi-info-circle me-2"></i>
-                        File audio disimpan secara aman dan hanya dapat diakses melalui sistem proxy server kami.
-                    </p>-->
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- MARS KKO PAUD -->
     <section id="mars-kko" class="py-5 bg-light">
         <div class="container text-center">
-            <!<!-- Lirik Lagu -->
-                <div class="card shadow-sm border-0 mx-auto" style="max-width: 720px;">
-                    <div class="card-body text-start">
-                        <h5 class="fw-bold text-primary mb-3">📜 Lirik Mars KKO PAUD</h5>
+            <h2 class="fw-bold mb-3 text-primary">🎵 Mars KKO PAUD</h2>
+            <p class="text-secondary mb-4">
+                Dengarkan lagu kebanggaan kami dan ikuti liriknya.
+            </p>
 
-                        <p class="text-muted mb-2">
-                            KKO PAUD Kota Semarang <br>
-                            Sebagai mitra dalam berkarya <br>
-                            Berkomitmen tingkatkan profesionalisme <br>
-                            Sumber daya manusia
-                        </p>
+            <!-- Audio Player -->
+            <div class="d-flex justify-content-center mb-4">
+                <audio controls class="shadow rounded w-100" style="max-width: 480px;">
+                    <source src="{{ asset('assets/mars_kko/mars_kkopaudkotasemarang.mp3') }}" type="audio/mp3">
+                    Browser Anda tidak mendukung pemutar audio.
+                </audio>
+            </div>
 
-                        <p class="text-muted mb-2">
-                            Membangun insan yang bekerja sama <br>
-                            Hadapi perkembangan dunia <br>
-                            Berbasis informasi cepat tepat akurat <br>
-                            Serta dapat dipercaya
-                        </p>
+            <!-- Lirik Lagu -->
+            <div class="card shadow-sm border-0 mx-auto" style="max-width: 720px;">
+                <div class="card-body text-start">
+                    <h5 class="fw-bold text-primary mb-3">📜 Lirik Mars KKO PAUD</h5>
 
-                        <p class="text-muted mb-2">
-                            Bekerja berkualitas jujur solid dan amanah <br>
-                            Mengelola masa depan bangsa <br>
-                            Untuk mewujudkan tujuan kita bersama
-                        </p>
+                    <p class="text-muted mb-2">
+                        KKO PAUD Kota Semarang <br>
+                        Sebagai mitra dalam berkarya <br>
+                        Berkomitmen tingkatkan profesionalisme <br>
+                        Sumber daya manusia
+                    </p>
 
-                        <p class="fw-semibold text-success">
-                            Berprestasi untuk semua! <br>
-                            KKO Maju, Indonesia Jaya!
-                        </p>
-                    </div>
+                    <p class="text-muted mb-2">
+                        Membangun insan yang bekerja sama <br>
+                        Hadapi perkembangan dunia <br>
+                        Berbasis informasi cepat tepat akurat <br>
+                        Serta dapat dipercaya
+                    </p>
+
+                    <p class="text-muted mb-2">
+                        Bekerja berkualitas jujur solid dan amanah <br>
+                        Mengelola masa depan bangsa <br>
+                        Untuk mewujudkan tujuan kita bersama
+                    </p>
+
+                    <p class="fw-semibold text-success mb-0">
+                        Berprestasi untuk semua! <br>
+                        KKO Maju, Indonesia Jaya!
+                    </p>
                 </div>
-
+            </div>
         </div>
     </section>
 

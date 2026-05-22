@@ -9,25 +9,27 @@ class DocumentController extends Controller
 {
     public function index()
     {
-        // Menyusun data array objek sesuai dengan properti yang diminta di file Blade kamu
         $legalDocuments = [
             (object)[
-                'badge' => 'Otentik',
-                'title' => 'SK KKO',
-                'description' => 'Surat Keputusan KKO Paud Masa 2025-2029.',
-                'file' => 'SK_KKO.pdf' // Nama file asli yang disimpan di storage/app/legalitas/
-            ],
-            (object)[
-                'badge' => 'Disahkan',
                 'title' => 'SK Kemenkumham',
-                'description' => 'Surat Keputusan Pengesahan Badan Hukum KKO Paud.',
-                'file' => 'Kemenkumham.pdf'
+                'description' => 'Surat Keputusan Pengesahan Badan Hukum KKO Paud',
+                'file' => 'Kemenkumham.pdf',
+                'badge' => 'Disahkan',
+                'icon' => 'bi-file-earmark-text'
             ],
             (object)[
-                'badge' => 'Resmi',
+                'title' => 'SK KKO',
+                'description' => 'Surat Keputusan KKO Paud Masa 2025-2029',
+                'file' => 'SK_KKO.pdf',
+                'badge' => 'Otentik',
+                'icon' => 'bi-file-earmark-check'
+            ],
+            (object)[
                 'title' => 'SK Keberadaan Kesbangpol',
-                'description' => 'Surat Keputusan Keberadaan dari Kesatuan Bangsa dan Politik.',
-                'file' => 'Kesbangpol.pdf'
+                'description' => 'Surat Keputusan Keberadaan dari Kesatuan Bangsa dan Politik',
+                'file' => 'Kesbangpol.pdf',
+                'badge' => 'Resmi',
+                'icon' => 'bi-building'
             ]
         ];
 

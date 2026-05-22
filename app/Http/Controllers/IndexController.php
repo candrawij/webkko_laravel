@@ -19,8 +19,8 @@ class IndexController extends Controller
         // 2. Ambil 3 kegiatan terbaru
         $kegiatan_terbaru = Kegiatan::latest('tanggal')->take(3)->get();
 
-        // 3. Ambil 3 berita terbaru
-        $berita_terbaru = Berita::latest()->take(3)->get();
+        // 3. Ambil 4 berita terbaru (1 highlight, 3 list)
+        $berita_terbaru = Berita::latest()->take(4)->get();
 
         // Kirim semua ke view index
         return view('index', compact('pimpinan', 'kegiatan_terbaru', 'berita_terbaru'));

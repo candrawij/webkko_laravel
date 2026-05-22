@@ -1,115 +1,98 @@
 <x-layout>
-    <!-- HERO -->
-    <section id="hero" class="text-center">
-        <div class="circle"></div>
-        <div class="container position-relative" style="z-index:1;">
-        <span class="tagline">Kegiatan & Berita</span>
-        <h1 class="hero-title">Kegiatan</h1>
-        <h1 class="hero-subtitle">KKO PAUD Kota Semarang</h1>
-        <p class="hero-desc">
-            Ikuti berbagai kegiatan menarik dan dapata informasi terbaru seputar perkembangan KKO Paud Kota Semarang.
-        </p>
-        </div>
-    </section>
-
-    <!-- CARD KEGIATAN -->
-    <div class="container py-5"><div class="container my-5">
-        <h2 class="fw-bold text-center mb-5">Kegiatan Komunitas KKO Semarang</h2>
-
-        <div class="row g-4 justify-content-center">
-            @forelse($semua_kegiatan as $kegiatan)
-                @php
-                    // 1. Pecah string koma dari database menjadi array list foto
-                    $fotoList = $kegiatan->foto ? array_filter(explode(',', $kegiatan->foto)) : [];
-                    
-                    // 2. Set foto default (placeholder) jika tidak ada foto valid yang ditemukan
-                    $fotoUtama = asset('assets/img/logo.jpg'); 
-                    
-                    // 3. Cari foto pertama dari list yang beneran ada fisiknya di folder storage/kegiatan
-                    foreach ($fotoList as $fotoItem) {
-                        $nama_file = basename(trim($fotoItem));
-                        if (!empty($nama_file) && file_exists(public_path('storage/kegiatan/' . $nama_file))) {
-                            // Jika ketemu yang valid, gunakan rute jembatan kita
-                            $fotoUtama = route('kegiatan.foto', ['nama_file' => $nama_file]);
-                            break; 
-                        }
-                    }
-
-                    // 4. Hitung sisa foto untuk penanda badge "+X foto"
-                    $jumlahSisaFoto = count($fotoList) - 1;
-                    
-                    // 5. Tentukan apakah kegiatan mendatang atau sudah selesai
-                    $isMendatang = strtotime($kegiatan->tanggal) >= time();
-                @endphp
-
-                <div class="col-md-4">
-                    <div class="card shadow-sm rounded-4 h-100 border-0">
-                        <div class="position-relative">
-                            {{-- Render Foto Utama hasil seleksi loop di atas --}}
-                            <img src="{{ $fotoUtama }}" class="card-img-top rounded-top-4" alt="{{ $kegiatan->nama_kegiatan }}" style="height: 200px; object-fit: cover;">
-                            
-                            {{-- Badge Status Kegiatan (Mendatang / Selesai) --}}
-                            <span class="badge {{ $isMendatang ? 'bg-primary' : 'bg-success' }} position-absolute top-0 end-0 m-3">
-                                {{ $isMendatang ? 'Mendatang' : 'Selesai' }}
-                            </span>
-
-                            {{-- Badge Jumlah Sisa Foto (Hanya muncul jika foto lebih dari 1) --}}
-                            @if(count($fotoList) > 1)
-                                <span class="badge bg-info position-absolute bottom-0 end-0 m-2">
-                                    +{{ $jumlahSisaFoto }} foto
-                                </span>
-                            @endif
-                        </div>
-
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title fw-bold text-dark">{{ $kegiatan->nama_kegiatan }}</h5>
-                            
-                            <p class="mb-1 text-muted small">
-                                <i class="bi bi-calendar-event text-danger"></i> {{ date('d M Y', strtotime($kegiatan->tanggal)) }}
-                            </p>
-                            <p class="mb-1 text-muted small">
-                                <i class="bi bi-clock text-danger"></i> {{ date('H:i', strtotime($kegiatan->waktu)) }} WIB
-                            </p>
-                            <p class="mb-1 text-muted small">
-                                <i class="bi bi-geo-alt text-danger"></i> {{ $kegiatan->lokasi ?? $kegiatan->tempat }}
-                            </p>
-                            
-                            <p class="card-text text-muted small flex-grow-1 mt-2">
-                                {{ Str::limit(strip_tags($kegiatan->deskripsi), 120, '...') }}
-                            </p>
-                        </div>
-
-                        <div class="card-footer bg-white border-0 d-flex justify-content-between p-3">
-                            <a href="{{ route('kegiatan.show', $kegiatan->id) }}" class="btn btn-danger w-75 rounded-pill">
-                                <i class="bi bi-eye"></i> Detail
-                            </a>
-                            
-                            {{-- Dropdown Share Media Sosial --}}
-                            <div class="dropdown">
-                                <button class="btn btn-light border dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="bi bi-share"></i>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a class="dropdown-item" href="https://wa.me/?text={{ urlencode($kegiatan->nama_kegiatan.' - Lihat detail di: '.route('kegiatan.show', $kegiatan->id)) }}" target="_blank">
-                                            <i class="bi bi-whatsapp text-success"></i> WhatsApp
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(route('kegiatan.show', $kegiatan->id)) }}" target="_blank">
-                                            <i class="bi bi-facebook text-primary"></i> Facebook
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @empty
-                <div class="col-12 text-center py-5">
-                    <p class="text-muted fs-5">Belum ada agenda atau kegiatan yang dicatat saat ini.</p>
-                </div>
-            @endforelse
-        </div>
+  <!-- HERO -->
+  <section id="hero" class="text-center" style="background: linear-gradient(180deg, #fde8e9 0%, #fff 100%); padding-top: 70px; padding-bottom: 20px;">
+    <div class="circle"></div>
+    <div class="container position-relative" style="z-index:1;">
+      <span class="tagline d-inline-block bg-danger-subtle text-danger px-3 py-1 rounded-pill fw-semibold mb-3">Kegiatan</span>
+      <h1 class="hero-title fw-bolder text-dark" style="font-size: 2.8rem; margin-bottom: 0.2rem;">Kegiatan</h1>
+      <h1 class="hero-subtitle fw-bolder text-danger" style="font-size: 2.8rem;">KKO PAUD Kota Semarang</h1>
+      <p class="hero-desc text-muted mx-auto mt-4" style="max-width: 600px; font-size: 1.1rem;">
+        Ikuti berbagai kegiatan menarik dan dapatkan informasi terbaru seputar perkembangan KKO Paud Kota Semarang.
+      </p>
     </div>
+  </section>
+
+  <!-- CARD KEGIATAN -->
+  <div class="container mt-3 mb-5">
+    <div class="row g-4 justify-content-center">
+      @forelse($semua_kegiatan as $row)
+        @php
+          $fotoList = !empty($row->foto) ? explode(",", $row->foto) : [];
+          $fotoUtama = (!empty($fotoList[0]) && file_exists(public_path('assets/foto_kegiatan/' . $fotoList[0])))
+                        ? asset('assets/foto_kegiatan/' . $fotoList[0])
+                        : asset('assets/img/contoh.jpeg');
+
+          $tgl = date("d M Y", strtotime($row->tanggal));
+          $jam = date("H:i", strtotime($row->jam));
+        @endphp
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card shadow-sm rounded-4 h-100">
+            <div class="card-img-wrapper position-relative" style="width: 100%; height: 200px; background: #f8f9fa; display: flex; align-items: center; justify-content: center; overflow: hidden; border-top-left-radius: inherit; border-top-right-radius: inherit;">
+                <img src="{{ $fotoUtama }}" alt="{{ $row->nama_kegiatan }}" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+              <span class="badge {{ (strtotime($row->tanggal) >= time()) ? 'bg-primary' : 'bg-success' }} position-absolute top-0 end-0 m-3">
+                  {{ (strtotime($row->tanggal) >= time()) ? 'Mendatang' : 'Selesai' }}
+              </span>
+              @if(count($fotoList) > 1)
+                <span class="badge bg-info position-absolute bottom-0 end-0 m-2">
+                  +{{ count($fotoList) - 1 }} foto
+                </span>
+              @endif
+            </div>
+            <div class="card-body">
+              <h5 class="card-title fw-bold">{{ $row->nama_kegiatan }}</h5>
+              <p class="mb-1 text-muted"><i class="bi bi-calendar-event text-danger"></i> {{ $tgl }}</p>
+              <p class="mb-1 text-muted"><i class="bi bi-clock text-danger"></i> {{ $jam }} WIB</p>
+              <p class="mb-1 text-muted"><i class="bi bi-geo-alt text-danger"></i> {{ $row->tempat }}</p>
+              <p class="card-text">{{ Str::limit(strip_tags($row->deskripsi), 120) }}</p>
+            
+              @php
+                $materiList = !empty($row->materi) ? explode(",", $row->materi) : [];
+              @endphp
+              
+              @if(!empty($materiList[0]))
+                <div class="mt-3">
+                  <strong><i class="bi bi-paperclip"></i> Materi:</strong>
+                  <ul class="mb-0 ps-3">
+                    @foreach($materiList as $index => $m)
+                      @if(!empty(trim($m)))
+                        <li>
+                          <a href="{{ asset('assets/materi_kegiatan/' . trim($m)) }}" target="_blank" class="text-decoration-none text-primary">
+                            📄 File {{ $index + 1 }}
+                          </a>
+                        </li>
+                      @endif
+                    @endforeach
+                  </ul>
+                </div>
+              @endif
+
+            </div>
+            <div class="card-footer bg-white border-0 d-flex justify-content-between">
+              <a href="{{ route('kegiatan.show', $row->id) }}" class="btn btn-danger w-75">
+                <i class="bi bi-eye"></i> Detail
+              </a>
+              <div class="dropdown">
+                <button class="btn btn-light border dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-share"></i>
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item"
+                      href="https://wa.me/?text={{ urlencode($row->nama_kegiatan . ' - Lihat detail di: ' . url('/kegiatan/' . $row->id)) }}"
+                      target="_blank">
+                      <i class="bi bi-whatsapp text-success"></i> WhatsApp
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      @empty
+        <div class="col-12">
+            <p class='text-center text-muted'>Belum ada kegiatan.</p>
+        </div>
+      @endforelse
+    </div>
+  </div>
 </x-layout>

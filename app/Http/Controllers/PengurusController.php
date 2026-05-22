@@ -9,16 +9,21 @@ class PengurusController extends Controller
 {
     public function anggota()
     {
-        // Mengambil semua data pengurus tanpa filter jabatan tertentu
-        $pimpinan = Pengurus::whereIn('jabatan', ['Pembina', 'Ketua Umum', 'Ketua Harian'])
-            ->orderByRaw("FIELD(jabatan, 'Pembina', 'Ketua Umum', 'Ketua Harian')")
+        $semua_pengurus = Pengurus::orderByRaw("CASE
+                WHEN jabatan LIKE 'Pembina%' THEN 1
+                WHEN jabatan LIKE 'Ketua Umum%' THEN 2
+                WHEN jabatan LIKE 'Ketua Harian%' THEN 3
+                WHEN jabatan LIKE 'Sekretaris%' THEN 4
+                WHEN jabatan LIKE 'Bendahara%' THEN 5
+                WHEN jabatan LIKE 'Bidang%' THEN 6
+                WHEN jabatan LIKE 'Anggota%' THEN 7
+                ELSE 99
+            END")
+            ->orderBy('id', 'asc')
             ->get();
-        
-        // Menggunakan paginate agar jika datanya ratusan, halaman tidak terlalu panjang
-        $semua_pengurus = Pengurus::paginate(12); 
 
         // Mengarahkan ke file view anggota.blade.php dengan membawa data semua pengurus
-        return view('anggota', compact('semua_pengurus', 'pimpinan'));
+        return view('anggota', compact('semua_pengurus'));
     }
 
     public function showFotoPengurus($nama_file)

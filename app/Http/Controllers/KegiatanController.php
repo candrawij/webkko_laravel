@@ -10,7 +10,7 @@ class KegiatanController extends Controller
     public function index()
     {
         // Mengambil semua data dari tabel kegiatan, diurutkan dari yang terbaru
-        $semua_kegiatan = Kegiatan::latest('tanggal')->get();
+        $semua_kegiatan = Kegiatan::orderBy('tanggal', 'desc')->get();
 
         // Mengirim data ke file view kegiatan.blade.php
         return view('kegiatan', compact('semua_kegiatan'));

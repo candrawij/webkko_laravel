@@ -1,97 +1,147 @@
 <x-layout>
-    <div id="hero" class="py-5" style="background: linear-gradient(180deg, #fde8e9 0%, #fff 100%);">
-        <div class="container">
-            <h2 class="fw-bold">KKO PAUD KOTA SEMARANG</h2>
-            <small class="text-danger fw-bold">VALID DAN AKURAT</small>
-        </div>
+  <!-- HEADER -->
+  <div id="hero" style="background: linear-gradient(180deg, #fde8e9 0%, #fff 100%); padding-top: 60px; padding-bottom: 60px;">
+    <div class="container">
+      <h2 class="fw-bold">KKO PAUD KOTA SEMARANG</h2>
+      <small class="text-danger">VALID DAN AKURAT</small>
     </div>
+  </div>
 
-    <div class="container mt-4">
-        <div class="row">
-            <div class="col-md-8">
-                
-                {{-- Bagian Highlight --}}
-                @if($highlight)
-                    <div class="mb-4 pb-3 border-bottom">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <a href="{{ route('berita', $highlight->slug) }}">
-                                    <img src="{{ $highlight->gambar ? asset('storage/berita/'.$highlight->gambar) : asset('assets/img/logo.jpg') }}" class="img-fluid rounded shadow-sm">
-                                </a>
-                            </div>
-                            <div class="col-md-8">
-                                <h4 class="fw-bold">
-                                    <a href="{{ route('berita', $highlight->slug) }}" class="text-dark text-decoration-none hover-danger">
-                                        {{ $highlight->judul }}
-                                    </a>
-                                </h4>
-                                <small class="text-muted">📅 {{ $highlight->created_at->format('d M Y') }}</small>
-                                <p class="mt-2 text-secondary">
-                                    {{ Str::limit(strip_tags($highlight->konten), 150) }}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                @endif
+  <div class="container mt-4 mb-5">
+    <div class="row">
 
-                {{-- List Berita --}}
-                @foreach($berita_list as $item)
-                    <div class="mb-4 pb-3 border-bottom">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <a href="{{ route('berita', $item->slug) }}">
-                                    <img src="{{ $item->gambar ? asset('storage/berita/'.$item->placeholder) : asset('assets/img/logo.jpg') }}" class="img-fluid rounded" style="height: 180px; object-fit: cover; width: 100%;">
-                                </a>
-                            </div>
-                            <div class="col-md-8">
-                                <h5 class="fw-bold">
-                                    <a href="{{ route('berita', $item->slug) }}" class="text-dark text-decoration-none">
-                                        {{ $item->judul }}
-                                    </a>
-                                </h5>
-                                <small class="text-muted">📅 {{ $item->created_at->format('d M Y') }}</small>
-                                <p class="mt-2 small">
-                                    {{ Str::limit(strip_tags($item->konten), 120) }}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
+      <!-- ================= LEFT ================= -->
+      <div class="col-md-8">
 
-                {{-- Link Navigasi Halaman --}}
-                <div class="d-flex justify-content-center">
-                    {{ $berita_list->links('vendor.pagination.bootstrap-5') }}
+        <!-- 🔥 HIGHLIGHT -->
+        @if(!empty($highlight))
+          @php
+            $foto = (!empty($highlight->foto) && file_exists(public_path("assets/berita/" . $highlight->foto))) 
+                ? asset("assets/berita/" . $highlight->foto) 
+                : asset("assets/img/contoh.jpeg");
+          @endphp
+
+          <div class="mb-4 pb-3 border-bottom card-hover">
+            <div class="row">
+              <!-- FOTO -->
+              <div class="col-md-4">
+                <a href="{{ route('berita.show', $highlight->slug) }}">
+                  <img src="{{ $foto }}" class="img-main rounded-3" style="width: 100%; height: 220px; object-fit: cover;">
+                </a>
+              </div>
+
+              <!-- TEXT -->
+              <div class="col-md-8 d-flex flex-column justify-content-center">
+                <div class="title mt-3 mt-md-0">
+                  <a href="{{ route('berita.show', $highlight->slug) }}" class="text-dark fw-bold fs-5 text-decoration-none hover-danger" style="transition: 0.3s;">
+                    {{ $highlight->judul }}
+                  </a>
                 </div>
+
+                <small class="text-muted mt-2">
+                  📅 {{ date("d M Y", strtotime($highlight->created_at)) }}
+                </small>
+
+                <p class="mt-2 text-muted" style="line-height: 1.6;">
+                  {{ Str::limit(strip_tags($highlight->konten), 150) }}
+                </p>
+              </div>
             </div>
+          </div>
+        @endif
 
-            <div class="col-md-4">
-                <div class="sidebar p-4 border rounded bg-white shadow-sm">
-                    <h6 class="fw-bold mb-3 border-start border-danger border-4 ps-2">Cari Berita</h6>
-                    <form action="/berita/search" method="GET">
-                        <input type="text" name="query" class="form-control mb-4" placeholder="Ketik kata kunci...">
-                    </form>
 
-                    <h6 class="fw-bold mb-3 border-start border-danger border-4 ps-2">Postingan Terbaru</h6>
-                    @foreach($recent as $r)
-                        <div class="mb-2 pb-2 border-bottom">
-                            <a href="{{ route('berita', $r->slug) }}" class="text-dark small text-decoration-none hover-danger">
-                                {{ $r->judul }}
-                            </a>
-                        </div>
-                    @endforeach
+        <!-- 🔥 LIST BERITA -->
+        @forelse($berita_list as $row)
+          @php
+            $foto = (!empty($row->foto) && file_exists(public_path("assets/berita/" . $row->foto))) 
+                ? asset("assets/berita/" . $row->foto) 
+                : asset("assets/img/contoh.jpeg");
+          @endphp
 
-                    <div class="mt-4 p-3 bg-light rounded">
-                        <h6 class="fw-bold">Info</h6>
-                        <p class="small text-muted mb-0">Portal resmi KKO PAUD Kota Semarang. Wadah kolaborasi operator PAUD.</p>
-                    </div>
+          <div class="mb-4 pb-3 border-bottom card-hover">
+            <div class="row">
+              <!-- FOTO -->
+              <div class="col-md-4">
+                <a href="{{ route('berita.show', $row->slug) }}">
+                  <img src="{{ $foto }}" class="img-main rounded-3" style="width: 100%; height: 220px; object-fit: cover;">
+                </a>
+              </div>
+
+              <!-- TEXT -->
+              <div class="col-md-8 d-flex flex-column justify-content-center">
+                <div class="title mt-3 mt-md-0">
+                  <a href="{{ route('berita.show', $row->slug) }}" class="text-dark fw-bold fs-5 text-decoration-none hover-danger" style="transition: 0.3s;">
+                    {{ $row->judul }}
+                  </a>
                 </div>
+
+                <small class="text-muted mt-2">
+                  📅 {{ date("d M Y", strtotime($row->created_at)) }}
+                </small>
+
+                <p class="mt-2 text-muted" style="line-height: 1.6;">
+                  {{ Str::limit(strip_tags($row->konten), 150) }}
+                </p>
+              </div>
             </div>
+          </div>
+        @empty
+          <p class="text-muted">Belum ada berita yang tersedia.</p>
+        @endforelse
+
+      </div>
+
+      <!-- ================= RIGHT ================= -->
+      <div class="col-md-4">
+        <div class="sidebar bg-white p-4 rounded-4 shadow-sm" style="border: 1px solid #f0f0f0;">
+
+          <!-- SEARCH -->
+          <h6 class="fw-bold mb-3 d-flex align-items-center"><i class="bi bi-search text-danger me-2"></i> Search</h6>
+          <input type="text" class="form-control mb-4 rounded-3" placeholder="Cari berita...">
+
+          <!-- RECENT -->
+          <h6 class="fw-bold mt-3 mb-3 d-flex align-items-center"><i class="bi bi-clock-history text-danger me-2"></i> Recent Posts</h6>
+
+          @forelse($recent as $r)
+            <div class="mb-3 d-flex align-items-start">
+              <i class="bi bi-chevron-right text-danger me-2 small pt-1"></i>
+              <a href="{{ route('berita.show', $r->slug) }}" class="text-dark small text-decoration-none hover-danger" style="transition: 0.3s;">
+                {{ $r->judul }}
+              </a>
+            </div>
+          @empty
+            <p class="text-muted small">Belum ada posts</p>
+          @endforelse
+
+          <!-- INFO -->
+          <h6 class="fw-bold mt-5 mb-2 d-flex align-items-center"><i class="bi bi-info-circle text-danger me-2"></i> Info</h6>
+          <p class="small text-muted mb-0">
+            Portal resmi KKO PAUD Kota Semarang. Temukan informasi terbaru seputar perkembangan dan edukasi anak usia dini.
+          </p>
+
         </div>
+      </div>
+
     </div>
+  </div>
+
+  @push('styles')
+  <style>
+    .hover-danger:hover {
+      color: #dc3545 !important;
+    }
+    .card-hover:hover .img-main {
+      transform: scale(1.02);
+      transition: 0.3s;
+    }
+    .img-main {
+      transition: 0.3s;
+    }
+    .sidebar {
+      position: sticky;
+      top: 100px;
+    }
+  </style>
+  @endpush
 </x-layout>
-
-@push('styles')
-<style>
-    .hover-danger:hover { color: #dc3545 !important; transition: 0.3s; }
-</style>
-@endpush

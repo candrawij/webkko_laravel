@@ -52,13 +52,13 @@
 
                 {{-- Login / Dashboard --}}
                 @if(auth()->check())
-                    <a href="{{ route('filament.admin.pages.dashboard') }}" class="btn btn-success rounded-pill px-4">
-                        Ke Dashboard Admin
-                    </a>
+                    <x-nav-link href="{{ route('filament.admin.pages.dashboard') }}" target="_blank" class="fw-bold text-danger">
+                        Dashboard Admin
+                    </x-nav-link>
                 @else
-                    <a href="{{ route('filament.admin.auth.login') }}" class="btn btn-outline-danger rounded-pill px-4">
-                        Login
-                    </a>
+                    <x-nav-link href="{{ route('login') }}" target="_blank">
+                        Login 
+                    </x-nav-link>
                 @endif
 
             </div>

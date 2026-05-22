@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [IndexController::class, 'index'])->name('index');
 
+Route::get('/mars', function () {
+    return view('mars');
+})->name('mars');
+
 Route::get('/profil', function () {
     return view('profil');
 })->name('profil');
@@ -17,11 +21,17 @@ Route::get('/profil', function () {
 Route::get('/anggota', [PengurusController::class, 'anggota'])->name('anggota');
 Route::get('/gambar-pengurus/{nama_file}', [PengurusController::class, 'showFotoPengurus'])->name('pengurus.foto');
 
+Route::get('/pendaftaran', [App\Http\Controllers\PendaftaranController::class, 'create'])->name('pendaftaran.create');
+Route::post('/pendaftaran', [App\Http\Controllers\PendaftaranController::class, 'store'])->name('pendaftaran.store');
+Route::get('/cek-status', [App\Http\Controllers\PendaftaranController::class, 'cekStatus'])->name('pendaftaran.cek');
+Route::post('/cek-status', [App\Http\Controllers\PendaftaranController::class, 'submitCekStatus'])->name('pendaftaran.cek.submit');
+
 Route::get('/kegiatan', [KegiatanController::class, 'index'])->name('kegiatan.index');
 Route::get('/kegiatan/{id}', [KegiatanController::class, 'show'])->name('kegiatan.show');
 Route::get('/gambar-kegiatan/{nama_file}', [KegiatanController::class, 'showFotoKegiatan'])->name('kegiatan.foto');
 
 Route::get('/berita', [BeritaController::class, 'index'])->name('berita');
+Route::get('/berita/{slug}', [BeritaController::class, 'show'])->name('berita.show');
 
 Route::get('/galeri', [GaleriController::class, 'index'])->name('galeri.index');
 Route::get('/galeri/{id}', [GaleriController::class, 'show'])->name('galeri.show');
@@ -30,13 +40,14 @@ Route::get('/gambar-galeri/{nama_file}', [GaleriController::class, 'showFotoGale
 Route::get('/legalitas', [DocumentController::class, 'index'])->name('legalitas.index');
 
 Route::get('/download-legalitas/{nama_file}', [DocumentController::class, 'downloadLegalitas'])
-     ->middleware('auth') 
      ->name('legalitas.download');
 
 Route::get('/kontak', function () {
     return view('kontak');
 });
 
-Route::get('/login', function () {
-    return view('login');
-});
+use App\Http\Controllers\AuthController;
+
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'authenticate'])->name('login.post');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
