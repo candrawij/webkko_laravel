@@ -11,6 +11,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -52,7 +53,9 @@ class DocumentResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('badge')->label('Kategori'),
+                TextColumn::make('title')->label('Judul'),
+                TextColumn::make('description')->label('Deskripsi'),
             ])
             ->filters([
                 //
