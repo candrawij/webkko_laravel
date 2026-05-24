@@ -7,9 +7,12 @@ use App\Filament\Resources\DaftarEventResource\RelationManagers;
 use App\Models\DaftarEvent;
 use App\Models\Event;
 use Filament\Forms;
+use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -28,7 +31,10 @@ class DaftarEventResource extends Resource
     {
         return $form
             ->schema([
-                //
+                TextInput::make('nama_event')->label('Nama Event')->required(),
+                TextInput::make('deskripsi')->label('Deskripsi')->required(),
+                DatePicker::make('tanggal_event')->label('Tanggal Event')->required(),
+                TextInput::make('lokasi')->label('Lokasi')->required(),
             ]);
     }
 
@@ -36,13 +42,17 @@ class DaftarEventResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('nama_event')->label('Nama Event')->searchable(),
+                TextColumn::make('deskripsi')->label('Deskripsi')->limit(50),
+                TextColumn::make('tanggal_event')->label('Tanggal Event')->date(),
+                TextColumn::make('lokasi')->label('Lokasi'),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
