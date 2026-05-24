@@ -13,9 +13,12 @@ class Pendaftar extends Model
         'email',
         'no_hp',
         'alamat',
+        'tempat_lahir',
         'tanggal_lahir',
         'jenis_kelamin',
         'pendidikan_terakhir',
         'status',
+        'created_at', 
+        'updated_at',
     ];
 }
