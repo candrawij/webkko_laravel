@@ -30,6 +30,9 @@ class DatabaseSeeder extends Seeder
             PengumumanSeeder::class,
             GaleriSeeder::class,
             PendaftarSeeder::class,
+            EventSeeder::class,
+            BukuTamuSeeder::class,
+            DocumentSeeder::class,
         ]);
     }
 }

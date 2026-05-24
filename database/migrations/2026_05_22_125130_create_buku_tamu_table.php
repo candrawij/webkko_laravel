@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('no_hp')->nullable();
             $table->string('foto')->nullable();
             $table->timestamp('checkin_at')->nullable();
+            $table->timestamp('checkout_at')->nullable();
             $table->timestamps();
             
             $table->foreign('event_id')->references('id')->on('event')->onDelete('cascade');

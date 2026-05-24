@@ -23,8 +23,8 @@ class DaftarEventResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-calendar-days';
 
-    public static ?string $label = 'Kegiatan';
-    protected static ?string $navigationLabel = 'Kegiatan';
+    public static ?string $label = 'Event';
+    protected static ?string $navigationLabel = 'Event';
 
     protected static ?string $navigationGroup = 'Buku Tamu';
 
