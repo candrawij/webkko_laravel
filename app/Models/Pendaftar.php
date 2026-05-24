@@ -18,5 +18,7 @@ class Pendaftar extends Model
         'jenis_kelamin',
         'pendidikan_terakhir',
         'status',
+        'created_at', 
+        'updated_at',
     ];
 }

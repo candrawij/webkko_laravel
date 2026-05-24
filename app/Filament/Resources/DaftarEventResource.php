@@ -7,9 +7,12 @@ use App\Filament\Resources\DaftarEventResource\RelationManagers;
 use App\Models\DaftarEvent;
 use App\Models\Event;
 use Filament\Forms;
+use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -93,6 +96,7 @@ class DaftarEventResource extends Resource
                         'x-on:click' => "window.navigator.clipboard.writeText('".url('/buku_tamu.php?token=' . $record->token)."'); \$tooltip('Tersalin!', { timeout: 1500 });",
                     ]),
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
                 Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
