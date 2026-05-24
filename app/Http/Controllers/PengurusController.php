@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pengurus;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Storage;
 
 class PengurusController extends Controller
 {
     public function anggota()
     {
-        $semua_pengurus = Pengurus::orderByRaw("CASE
+        $semua_pengurus = Cache::remember('semua_pengurus', 60, function () {
+            return Pengurus::orderByRaw("CASE
                 WHEN jabatan LIKE 'Pembina%' THEN 1
                 WHEN jabatan LIKE 'Ketua Umum%' THEN 2
                 WHEN jabatan LIKE 'Ketua Harian%' THEN 3
@@ -21,6 +23,7 @@ class PengurusController extends Controller
             END")
             ->orderBy('id', 'asc')
             ->get();
+        });
 
         // Mengarahkan ke file view anggota.blade.php dengan membawa data semua pengurus
         return view('anggota', compact('semua_pengurus'));
@@ -36,7 +39,9 @@ class PengurusController extends Controller
         }
 
         // 2. Dapatkan jalur absolut (full path) fisik file di dalam server Laragon
-        $absolutePath = Storage::disk('local')->path($path);
+        $absolutePath = Cache::remember("pengurus_foto_path_{$nama_file}", 60, function () use ($path) {
+            return Storage::disk('local')->path($path);
+        });
 
         // 3. Kembalikan file secara langsung. Laravel otomatis menebak Content-Type (MimeType) di balik layar!
         return response()->file($absolutePath);

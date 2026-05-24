@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\Kegiatan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class KegiatanController extends Controller
 {
     public function index()
     {
         // Mengambil semua data dari tabel kegiatan, diurutkan dari yang terbaru
-        $semua_kegiatan = Kegiatan::orderBy('tanggal', 'desc')->get();
+        $semua_kegiatan = Cache::remember('semua_kegiatan', 60, function () {
+            return Kegiatan::orderBy('tanggal', 'desc')->get();
+        });
 
         // Mengirim data ke file view kegiatan.blade.php
         return view('kegiatan', compact('semua_kegiatan'));
