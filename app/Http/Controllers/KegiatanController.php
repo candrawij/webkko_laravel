@@ -11,7 +11,7 @@ class KegiatanController extends Controller
     public function index()
     {
         // Mengambil semua data dari tabel kegiatan, diurutkan dari yang terbaru
-        $semua_kegiatan = Cache::remember('semua_kegiatan', 60, function () {
+        $semua_kegiatan = Cache::remember('semua_kegiatan', 1200, function () {
             return Kegiatan::orderBy('tanggal', 'desc')->get();
         });
 
@@ -22,7 +22,9 @@ class KegiatanController extends Controller
     // Fungsi untuk melihat detail satu kegiatan saat diklik
     public function show($id)
     {
-        $kegiatan = Kegiatan::where('id', $id)->first();
+        $kegiatan = Cache::remember("kegiatan_$id", 1200, function () use ($id) {
+            return Kegiatan::where('id', $id)->first();
+        });
 
         if (!$kegiatan) {
             abort(404, 'Kegiatan tidak ditemukan');

@@ -25,7 +25,12 @@ class AdminKegiatanController extends Controller
                 unlink($materiFolder . $file);
             }
             
-            Kegiatan::where('id', $id)->update(['materi' => null]);
+            $kegiatan = Kegiatan::find($id);
+            if ($kegiatan) {
+                $kegiatan->update(['materi' => null]);
+                $kegiatan->save();
+            }
+
             return back()->with('success', 'File materi berhasil dihapus');
         }
 
@@ -130,15 +135,19 @@ class AdminKegiatanController extends Controller
                     $materi = $request->input('materi_lama');
                 }
                 
-                Kegiatan::where('id', $id)->update([
-                    'nama_kegiatan' => $nama_kegiatan,
-                    'tanggal' => $tanggal,
-                    'jam' => $jam,
-                    'tempat' => $tempat,
-                    'deskripsi' => $deskripsi,
-                    'foto' => $fotoStr,
-                    'materi' => $materi
-                ]);
+                $kegiatan = Kegiatan::find($id);
+                if ($kegiatan) {
+                    $kegiatan->nama_kegiatan = $nama_kegiatan;
+                    $kegiatan->tanggal = $tanggal;
+                    $kegiatan->jam = $jam;
+                    $kegiatan->tempat = $tempat;
+                    $kegiatan->deskripsi = $deskripsi;
+                    $kegiatan->foto = $fotoStr;
+                    $kegiatan->materi = $materi;
+
+                    $kegiatan->save();
+                }
+
             } else {
                 // TAMBAH BARU
                 Kegiatan::create([
