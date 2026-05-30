@@ -293,8 +293,8 @@
 
                     <div class="col-md-4">
                         <div class="card h-100 shadow-sm rounded-4 overflow-hidden border-0">
-                            <div class="position-relative">
-                                <img src="{{ $fotoUtama }}" class="card-img-top" alt="{{ $row->nama_kegiatan }}" style="height: 200px; object-fit: cover;">
+                            <div class="card-img-wrapper position-relative" style="width: 100%; height: 200px; background: #f8f9fa; display: flex; align-items: center; justify-content: center; overflow: hidden; border-top-left-radius: inherit; border-top-right-radius: inherit;">
+                                <img src="{{ $fotoUtama }}" class="card-img-top" alt="{{ $row->nama_kegiatan }}" style="max-width: 100%; max-height: 100%; object-fit: contain;">
                                 
                                 <span class="badge {{ $isMendatang ? 'bg-primary' : 'bg-success' }} position-absolute top-0 end-0 m-3">
                                     {{ $isMendatang ? 'Mendatang' : 'Selesai' }}

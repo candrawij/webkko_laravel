@@ -13,50 +13,12 @@
       <!-- ================= LEFT ================= -->
       <div class="col-md-8">
 
-        <!-- 🔥 HIGHLIGHT -->
-        @if(!empty($highlight))
-          @php
-            $foto = (!empty($highlight->foto) && file_exists(public_path("assets/berita/" . $highlight->foto))) 
-                ? asset("assets/berita/" . $highlight->foto) 
-                : asset("assets/img/contoh.jpeg");
-          @endphp
-
-          <div class="mb-4 pb-3 border-bottom card-hover">
-            <div class="row">
-              <!-- FOTO -->
-              <div class="col-md-4">
-                <a href="{{ route('berita.show', $highlight->slug) }}">
-                  <img src="{{ $foto }}" class="img-main rounded-3" style="width: 100%; height: 220px; object-fit: cover;">
-                </a>
-              </div>
-
-              <!-- TEXT -->
-              <div class="col-md-8 d-flex flex-column justify-content-center">
-                <div class="title mt-3 mt-md-0">
-                  <a href="{{ route('berita.show', $highlight->slug) }}" class="text-dark fw-bold fs-5 text-decoration-none hover-danger" style="transition: 0.3s;">
-                    {{ $highlight->judul }}
-                  </a>
-                </div>
-
-                <small class="text-muted mt-2">
-                  📅 {{ date("d M Y", strtotime($highlight->created_at)) }}
-                </small>
-
-                <p class="mt-2 text-muted" style="line-height: 1.6;">
-                  {{ Str::limit(strip_tags($highlight->konten), 150) }}
-                </p>
-              </div>
-            </div>
-          </div>
-        @endif
-
-
         <!-- 🔥 LIST BERITA -->
         @forelse($berita_list as $row)
           @php
             $foto = (!empty($row->foto) && file_exists(public_path("assets/berita/" . $row->foto))) 
                 ? asset("assets/berita/" . $row->foto) 
-                : asset("assets/img/contoh.jpeg");
+                : asset("assets/img/logo.jpg");
           @endphp
 
           <div class="mb-4 pb-3 border-bottom card-hover">

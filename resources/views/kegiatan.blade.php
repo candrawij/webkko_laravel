@@ -18,9 +18,16 @@
       @forelse($semua_kegiatan as $row)
         @php
           $fotoList = !empty($row->foto) ? explode(",", $row->foto) : [];
-          $fotoUtama = (!empty($fotoList[0]) && file_exists(public_path('assets/foto_kegiatan/' . $fotoList[0])))
-                        ? asset('assets/foto_kegiatan/' . $fotoList[0])
-                        : asset('assets/img/contoh.jpeg');
+
+          $fotoUtama = asset('assets/img/logo.jpg'); 
+                        
+          foreach ($fotoList as $fotoItem) {
+              $nama_file = basename(trim($fotoItem));
+              if (!empty($nama_file) && file_exists(public_path('assets/foto_kegiatan/' . $nama_file))) {
+                  $fotoUtama = asset('assets/foto_kegiatan/' . $nama_file);
+                  break; 
+              }
+          }
 
           $tgl = date("d M Y", strtotime($row->tanggal));
           $jam = date("H:i", strtotime($row->jam));
